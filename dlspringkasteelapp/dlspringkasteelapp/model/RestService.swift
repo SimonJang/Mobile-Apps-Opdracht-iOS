@@ -4,7 +4,8 @@
 
 
 //  Deze klasse haalt de data op van de REST service
-// TODO implementeren
+// TODO implementeren asap maar eerst CocoaPods configureren
+// !! ASAP !!
 
 import Foundation
 class RestService {

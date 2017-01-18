@@ -45,6 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
+    
+    // TODO implementeren wanneer basisfunctionaliteit klaar is
 
     lazy var persistentContainer: NSPersistentContainer = {
         /*

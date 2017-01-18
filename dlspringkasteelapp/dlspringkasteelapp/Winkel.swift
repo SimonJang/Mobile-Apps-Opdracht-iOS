@@ -11,6 +11,8 @@ import Foundation
 class Winkel {
     var storeId: Int;
     var storeName: String;
+    var adresWinkel: String = ""
+    var telefoonNummerWinkel: String = ""
     
     init(storeID: Int, storeNAME: String) {
         self.storeId = storeID;
