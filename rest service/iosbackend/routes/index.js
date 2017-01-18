@@ -23,4 +23,8 @@ router.get('/api/winkels', function(req,res) {
   })
 })
 
+router.get('/api/winkels/:id', function(req, res) {
+  
+})
+
 module.exports = router;

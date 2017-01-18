@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 
 var ReservatieSchema = new mongoose.Schema({
-    dag: Date,
+    datum: String,
     voornaam: String,
     familienaam: String,
     email: String,
