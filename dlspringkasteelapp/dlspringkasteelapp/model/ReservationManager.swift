@@ -72,7 +72,7 @@ class ReservationManager {
     // Op basis van bovenstaande filter, wordt dan de lijst van de vrije springkastelen aangepast
     
     func aanpassenBeschikbareSpringkastelen(springkastelen:[Springkasteel:Int], reservaties:[Reservatie]) -> [Springkasteel:Int] {
-        
+        return springkastelen;
     }
     
     private func haalReservatiesOp() -> [Reservatie]? {
