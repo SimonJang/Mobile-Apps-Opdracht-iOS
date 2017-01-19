@@ -30,7 +30,6 @@
         <!--Reservatie opzoeken-->
         <scene sceneID="Sue-Cf-l8L">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6AR-bu-sdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="YaJ-Fs-Kmy" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SUZ-Uv-04x"/>
@@ -39,17 +38,52 @@
                     <view key="view" contentMode="scaleToFill" id="Axx-uH-bD0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A95-IB-b9V">
+                                <rect key="frame" x="56" y="254" width="263" height="159"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opzoeken Reservatie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGK-qm-gUZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9R-SF-rKH">
+                                        <rect key="frame" x="0.0" y="48.5" width="262.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-g0-oUS">
+                                        <rect key="frame" x="0.0" y="84" width="262.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPN-ue-zQa">
+                                        <rect key="frame" x="0.0" y="129" width="262.5" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Zoeken"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A95-IB-b9V" firstAttribute="centerY" secondItem="Axx-uH-bD0" secondAttribute="centerY" id="Kfd-zw-SD9"/>
+                            <constraint firstItem="A95-IB-b9V" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="hKW-vp-AVD"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Reservatie opzoeken" id="kmu-fk-hve"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6AR-bu-sdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="787"/>
+            <point key="canvasLocation" x="245.59999999999999" y="786.65667166416802"/>
         </scene>
         <!--Springkasteel reserveren-->
         <scene sceneID="mYo-C1-hEo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kjj-ee-DM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <splitViewController id="Djf-41-Jjx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Springkasteel reserveren" id="Z3X-b6-nEv"/>
                     <connections>
@@ -57,13 +91,13 @@
                         <segue destination="dmd-cN-vaS" kind="showDetail" id="OId-W7-yAA"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kjj-ee-DM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="246" y="-333"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="8kC-8k-RPJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Fd-3b-xCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Qbb-g9-NY5" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZHY-bw-c8Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -86,13 +120,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="xjg-1J-SY4"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Fd-3b-xCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2399.1999999999998" y="-724.58770614692662"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jAy-dX-Ng6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xp0-eF-40M" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="dmd-cN-vaS" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CT4-k6-RhU"/>
@@ -104,13 +138,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xp0-eF-40M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1461" y="-17"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="baY-qP-85e">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t6g-7f-HDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="XiC-El-dxX" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UEU-fy-nFQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -132,13 +166,13 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6g-7f-HDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1198" y="787"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0rH-d7-CMv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ewj-bV-iNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xM1-wk-Pzw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQG-fH-WFI">
@@ -150,6 +184,7 @@
                         <segue destination="Qbb-g9-NY5" kind="relationship" relationship="rootViewController" id="fSe-dk-O01"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewj-bV-iNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1460" y="-724.58770614692662"/>
         </scene>
