@@ -53,10 +53,10 @@ class DummyData {
         
     }
     
-    func getReservaties(idNr: String, emailAdres: String) -> Reservatie? {
+    func getReservaties(emailAdres: String) -> Reservatie? {
         let klant = Klant(f_name: "Simon",l_name: "Jang", id_number: "12345678", klantEmail: "simon@test.be")
-        let date = Date() - 800000 // Dit zal in binnekort nodig zijn
-        if(idNr == "12345678" && emailAdres == "simon@test.be") {
+        let date = Date() - 800000
+        if(emailAdres == "simon@test.be") {
             return Reservatie(klant: klant, gewenstSpringkasteel: .JUNGLE, datum: date, afhaalwinkel: winkels[3957]!, termijn: 2, teBetalen: 99.00)
         }
         else {

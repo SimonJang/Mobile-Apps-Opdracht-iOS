@@ -2,8 +2,8 @@
 //  ReservatieTableViewController.swift
 //  dlspringkasteelapp
 //
-//  Created by Simon Jang on 19/01/17.
-//  Copyright © 2017 Simon Jang. All rights reserved.
+//  Voor code gebaseerd op https://www.ralfebert.de/tutorials/ios-swift-uitableviewcontroller/
+//  Geen copy/paste maar als voorbeeld van hoe table view moet worden geïmplementeerd
 //
 
 import UIKit

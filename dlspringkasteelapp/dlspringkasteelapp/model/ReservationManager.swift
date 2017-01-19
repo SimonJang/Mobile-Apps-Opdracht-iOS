@@ -12,7 +12,7 @@ class ReservationManager {
     
     // Dummy
     // Vervangen met echte service wanneer klaar
-    var tempData:DummyData = DummyData()
+    static var tempData:DummyData = DummyData()
     
     func maakReservatie(klantVoorReservatie: Klant,springkasteel: Springkasteel, winkel: Winkel, date:Date) -> Bool {
         let nieuweReservatie = Reservatie(klant:klantVoorReservatie, gewenstSpringkasteel: springkasteel, datum: date, afhaalwinkel: winkel, termijn: 1, teBetalen: 99.00)
@@ -20,14 +20,15 @@ class ReservationManager {
         return false
     }
     
-    func haalReservatieOp(idNumber: Int, email:String) -> Reservatie? {
+    // Beslissen welk 1 van de functies die we gaan gebruiken
+    static func haalReservatieOp(idNumber: Int, email:String) -> Reservatie? {
         // Met de rest api
         if let opgevraagdeReservatie = RestService.haalReservatieOp(idNr: idNumber, emailadres: email) {
             return opgevraagdeReservatie
         }
         else {
             // De dummy data
-            if let reservation = tempData.getReservaties(idNr: "12345678", emailAdres: "simon@test.be") {
+            if let reservation = tempData.getReservaties(emailAdres: "simon@test.be") {
                 return reservation
             }
             else {
@@ -55,6 +56,16 @@ class ReservationManager {
         return [:]
     }
     */
+    
+    // Haal reservatie op voor bepaalde klant
+    
+    static func haalReservatieOpVoorKlantMetEmail(_ email: String) -> [Reservatie] {
+        var reservaties:[Reservatie] = []
+        if let reservatie = tempData.getReservaties(emailAdres: email) {
+           reservaties.append(reservatie)
+        }
+        return reservaties
+    }
     
     // Testen voor functionaliteit
     

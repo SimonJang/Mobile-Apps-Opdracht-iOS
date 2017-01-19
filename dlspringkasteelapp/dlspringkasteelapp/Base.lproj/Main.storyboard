@@ -66,6 +66,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Zoeken"/>
                                         <connections>
+                                            <action selector="toonReservaties:" destination="YaJ-Fs-Kmy" eventType="touchUpInside" id="FGG-bI-79V"/>
                                             <segue destination="XiC-El-dxX" kind="show" identifier="ZoekReservatie" id="GRp-JC-qiK"/>
                                         </connections>
                                     </button>
