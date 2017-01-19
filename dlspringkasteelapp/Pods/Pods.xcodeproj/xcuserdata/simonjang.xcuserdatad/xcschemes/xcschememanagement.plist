@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-dlspringkasteelapp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CBF2C1F09E1307DAEFECD9D37AFCB75</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>43FCBB2B06A1B0D594931AFD38F825D1</key>
+		<key>CC3B506A7C0ADE01619060EAEBE4D471</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA1CB56A4D53F114FD4B8B389E88957C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,4 +7,5 @@ target 'dlspringkasteelapp' do
 
   # Pods for dlspringkasteelapp
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON'
+pod 'Alamofire', '~> 4.3'
 end
