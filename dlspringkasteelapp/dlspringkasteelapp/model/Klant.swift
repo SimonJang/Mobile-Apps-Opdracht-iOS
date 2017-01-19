@@ -9,13 +9,11 @@ import Foundation
 struct Klant {
     var firstName: String
     var lastName: String
-    var idNumber: String
     var email: String
     
     init(f_name: String, l_name: String, id_number:String, klantEmail: String ){
         self.firstName = f_name
         self.lastName = l_name
-        self.idNumber = id_number
         self.email = klantEmail
     }
 }
