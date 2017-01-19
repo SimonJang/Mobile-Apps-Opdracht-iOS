@@ -23,6 +23,7 @@
 		884911B91E2FD34500F8492C /* TempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884911B81E2FD34500F8492C /* TempData.swift */; };
 		887056DB1E30E1F400201958 /* ZoekReservatieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887056DA1E30E1F400201958 /* ZoekReservatieViewController.swift */; };
 		887056DD1E30E3DC00201958 /* ReservatieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887056DC1E30E3DC00201958 /* ReservatieTableViewController.swift */; };
+		887056DF1E311F7F00201958 /* WinkelSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887056DE1E311F7F00201958 /* WinkelSelectorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		884911B81E2FD34500F8492C /* TempData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TempData.swift; path = model/TempData.swift; sourceTree = "<group>"; };
 		887056DA1E30E1F400201958 /* ZoekReservatieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoekReservatieViewController.swift; path = controllers/ZoekReservatieViewController.swift; sourceTree = "<group>"; };
 		887056DC1E30E3DC00201958 /* ReservatieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReservatieTableViewController.swift; path = controllers/ReservatieTableViewController.swift; sourceTree = "<group>"; };
+		887056DE1E311F7F00201958 /* WinkelSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WinkelSelectorViewController.swift; path = controllers/WinkelSelectorViewController.swift; sourceTree = "<group>"; };
 		B2F73B15B1774A7391F23C8A /* Pods_dlspringkasteelapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dlspringkasteelapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 			children = (
 				887056DA1E30E1F400201958 /* ZoekReservatieViewController.swift */,
 				887056DC1E30E3DC00201958 /* ReservatieTableViewController.swift */,
+				887056DE1E311F7F00201958 /* WinkelSelectorViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				887056DD1E30E3DC00201958 /* ReservatieTableViewController.swift in Sources */,
 				884911B51E2FD32000F8492C /* RestService.swift in Sources */,
 				884911B11E2FD2E400F8492C /* Springkasteel.swift in Sources */,
+				887056DF1E311F7F00201958 /* WinkelSelectorViewController.swift in Sources */,
 				887056DB1E30E1F400201958 /* ZoekReservatieViewController.swift in Sources */,
 				884911AF1E2FD2C600F8492C /* Winkel.swift in Sources */,
 				884911AB1E2FD29200F8492C /* ReservationManager.swift in Sources */,

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,13 +20,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Djf-41-Jjx" kind="relationship" relationship="viewControllers" id="AM9-aU-ewe"/>
-                        <segue destination="1CR-pg-4Fg" kind="relationship" relationship="viewControllers" id="BYF-ud-0WP"/>
+                        <segue destination="CW8-77-WOa" kind="relationship" relationship="viewControllers" id="yPd-uH-gMS"/>
+                        <segue destination="1CR-pg-4Fg" kind="relationship" relationship="viewControllers" id="jc9-d1-QGV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKE-G0-scP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1090" y="240"/>
+            <point key="canvasLocation" x="-1532" y="199"/>
         </scene>
         <!--Zoeken Reservatie-->
         <scene sceneID="Sue-Cf-l8L">
@@ -100,6 +101,99 @@
             </objects>
             <point key="canvasLocation" x="1184.8" y="786.65667166416802"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="bQa-de-dwL">
+            <objects>
+                <viewController id="tg7-Yc-x4X" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G4n-o9-eVR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dpe-J5-K7i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Uc-aa-zCi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="24b-um-Lpk">
+                                <rect key="frame" x="27" y="208" width="320" height="273"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecteer een winkel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5H-1G-Je6">
+                                        <rect key="frame" x="60.5" y="0.0" width="199" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kpb-18-7NV">
+                                        <rect key="frame" x="0.0" y="24" width="320" height="216"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrb-ja-Ozk">
+                                        <rect key="frame" x="0.0" y="240" width="320" height="33"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Ga verder"/>
+                                        <connections>
+                                            <segue destination="OAQ-9f-7hq" kind="show" id="rQa-0P-GER"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Zrb-ja-Ozk" firstAttribute="width" secondItem="24b-um-Lpk" secondAttribute="width" id="6li-cX-QCh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dpe-J5-K7i" firstAttribute="top" secondItem="24b-um-Lpk" secondAttribute="bottom" constant="137" id="I6s-NG-Ypw"/>
+                            <constraint firstItem="24b-um-Lpk" firstAttribute="leading" secondItem="0Uc-aa-zCi" secondAttribute="leadingMargin" constant="11" id="iUI-d0-eL9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="24b-um-Lpk" secondAttribute="trailing" constant="12" id="mWL-L3-S0S"/>
+                            <constraint firstItem="24b-um-Lpk" firstAttribute="centerX" secondItem="0Uc-aa-zCi" secondAttribute="centerX" id="uKj-ny-nGn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nTj-tR-50O"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nd9-1o-Dtj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="-382.75862068965517"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="K0B-8F-AUG">
+            <objects>
+                <viewController id="OAQ-9f-7hq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OB8-x2-nNT"/>
+                        <viewControllerLayoutGuide type="bottom" id="qac-g2-fik"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IL6-9k-MQ0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYe-df-3GD">
+                                <rect key="frame" x="166" y="86" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HE8-Mk-xtK">
+                                <rect key="frame" x="0.0" y="264" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="506535143.81884599">
+                                    <!--2017-01-19 16:12:23 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wf-fm-pfA">
+                                <rect key="frame" x="166" y="542" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EqI-vv-IiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="-383"/>
+        </scene>
         <!--Springkasteel reserveren-->
         <scene sceneID="mYo-C1-hEo">
             <objects>
@@ -112,7 +206,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjj-ee-DM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="-333"/>
+            <point key="canvasLocation" x="2540" y="-473.6131934032984"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="8kC-8k-RPJ">
@@ -141,7 +235,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Fd-3b-xCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399.1999999999998" y="-724.58770614692662"/>
+            <point key="canvasLocation" x="4304.8000000000002" y="-1004.3478260869566"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jAy-dX-Ng6">
@@ -159,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xp0-eF-40M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461" y="-17"/>
+            <point key="canvasLocation" x="4304.8000000000002" y="4.9475262368815596"/>
         </scene>
         <!--Overzicht Reservaties-->
         <scene sceneID="baY-qP-85e">
@@ -215,7 +309,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewj-bV-iNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460" y="-724.58770614692662"/>
+            <point key="canvasLocation" x="3368.8000000000002" y="-1005.2473763118442"/>
         </scene>
         <!--Reservatie opzoeken-->
         <scene sceneID="z1F-63-KHI">
@@ -235,6 +329,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wW-wu-wKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="245.59999999999999" y="786.65667166416802"/>
+        </scene>
+        <!--Reserveer springkasteel-->
+        <scene sceneID="FYj-zi-tpt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CW8-77-WOa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Reserveer springkasteel" id="6vl-ep-SAg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iC3-Bq-px3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tg7-Yc-x4X" kind="relationship" relationship="rootViewController" id="0eE-LU-Fmm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHK-ad-3ZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-359.19999999999999" y="-382.75862068965517"/>
         </scene>
     </scenes>
 </document>
