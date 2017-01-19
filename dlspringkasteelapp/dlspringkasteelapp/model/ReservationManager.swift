@@ -13,6 +13,7 @@ class ReservationManager {
     // Dummy
     // Vervangen met echte service wanneer klaar
     static var tempData:DummyData = DummyData()
+    static var huidigeGebruiker: String = ""
     
     func maakReservatie(klantVoorReservatie: Klant,springkasteel: Springkasteel, winkel: Winkel, date:Date) -> Bool {
         let nieuweReservatie = Reservatie(klant:klantVoorReservatie, gewenstSpringkasteel: springkasteel, datum: date, afhaalwinkel: winkel, termijn: 1, teBetalen: 99.00)
@@ -65,6 +66,7 @@ class ReservationManager {
     static func haalReservatieOpVoorKlantMetEmail(_ email: String) -> [Reservatie] {
         var reservaties:[Reservatie] = []
         reservaties = tempData.getReservaties(emailAdres: email) ?? []
+        reservaties = reservaties.sorted(by: { $0.datum.compare($1.datum) == ComparisonResult.orderedAscending })
         return reservaties
     }
     

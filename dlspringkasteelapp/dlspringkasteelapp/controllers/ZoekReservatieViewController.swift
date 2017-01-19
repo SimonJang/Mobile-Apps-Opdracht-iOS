@@ -25,10 +25,9 @@ class ZoekReservatieViewController: UIViewController {
         switch(identifier) {
         case "ZoekReservatie":
             if let input = emailTxt?.text {
-                print(input)
                 let reservaties = ReservationManager.haalReservatieOpVoorKlantMetEmail(input)
                 if reservaties.count == 0 {
-                    emailTxt!.text = " "
+                    emailTxt!.text = ""
                     warningTxt!.isHidden = false
                     return false
                 }
@@ -46,21 +45,13 @@ class ZoekReservatieViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*
+        
         if segue.identifier == "ZoekReservatie" {
+            let destination = segue.destination as? ReservatieTableViewController
             if let input = emailTxt?.text {
-                let reservaties = ReservationManager.haalReservatieOpVoorKlantMetEmail(input)
-                if reservaties.count == 0 {
-                    emailTxt!.text = " "
-                    warningTxt!.isHidden = false
-                }
-                else {
-                    var destination = segue.destination as? UITableViewController
-                    
-                }
+                ReservationManager.huidigeGebruiker = input
             }
         }
- */
     }
  
 
