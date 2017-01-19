@@ -31,20 +31,55 @@ class ReservatieTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return data.count
+        return 6
     }
     
     public func maakGebruiker(_ naam:String) {
         user = naam;
         print(naam)
     }
-
+    /*
+     
+     // Enkel een oplossing als tableView functie niet werkt
+     
+    func reservatieFormatter(reservatie: Reservatie) -> String {
+        let _ = "Reservatie op \(reservatie.datum)"
+    }
+     */
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as UITableViewCell
-        var cell = UITableViewCell()
-        cell.textLabel?.text = "test"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "labelCel", for: indexPath)
+        
+        if indexPath.row == 0 {
+            cell.textLabel?.text = String(describing: data[indexPath.section].datum)
+        }
+        else if indexPath.row == 1  {
+            cell.textLabel?.text = "\(data[indexPath.section].klant.firstName) \(data[indexPath.section].klant.lastName)"
+        }
+        else if indexPath.row == 2 {
+            cell.textLabel?.text = String(describing: data[indexPath.section].prijs)
+        }
+        else if indexPath.row == 3 {
+            cell.textLabel?.text = String(describing: data[indexPath.section].springkasteel)
+        }
+        else if indexPath.row == 4 {
+            cell.textLabel?.text = data[indexPath.section].store.storeName
+        }
+        else if indexPath.row == 5 {
+            cell.textLabel?.text = "\(String(describing: data[indexPath.section].termijn)) dagen"
+        }
+        /*
+         
+         Werkende basic code
+         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "labelCel", for: indexPath)
+        
+        cell.textLabel?.text = "Test Reservatie 
+        */
+        
         return cell
     }
+    
 
 }

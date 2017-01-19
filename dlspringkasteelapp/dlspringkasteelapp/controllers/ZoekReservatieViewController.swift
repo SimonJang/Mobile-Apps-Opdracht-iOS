@@ -45,10 +45,10 @@ class ZoekReservatieViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "ZoekReservatie" {
             let destination = segue.destination as? ReservatieTableViewController
             if let input = emailTxt?.text {
+                destination?.user = input
                 ReservationManager.huidigeGebruiker = input
             }
         }

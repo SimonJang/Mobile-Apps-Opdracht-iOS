@@ -20,6 +20,7 @@ class DummyData {
         return winkelDummy
     }
     
+    
     func getAantalSpringkastelen(winkelId: Int) -> [Springkasteel: Int]? {
         var springkastelen:Dictionary<Springkasteel,Int> = [.JUNGLE: 0, .PIRAAT: 0, .CIRCUS: 0, .JUMP: 0]
         switch(winkelId) {
