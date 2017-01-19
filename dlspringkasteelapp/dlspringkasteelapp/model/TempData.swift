@@ -53,15 +53,16 @@ class DummyData {
         
     }
     
-    func getReservaties(emailAdres: String) -> Reservatie? {
+    func getReservaties(emailAdres: String) -> [Reservatie]? {
+        var reservaties:[Reservatie] = []
         let klant = Klant(f_name: "Simon",l_name: "Jang", id_number: "12345678", klantEmail: "simon@test.be")
         let date = Date() - 800000
         if(emailAdres == "simon@test.be") {
-            return Reservatie(klant: klant, gewenstSpringkasteel: .JUNGLE, datum: date, afhaalwinkel: winkels[3957]!, termijn: 2, teBetalen: 99.00)
+            reservaties.append(Reservatie(klant: klant, gewenstSpringkasteel: .JUNGLE, datum: date, afhaalwinkel: winkels[3957]!, termijn: 2, teBetalen: 99.00))
+            reservaties.append(Reservatie(klant: klant, gewenstSpringkasteel: .JUNGLE, datum: date-500000, afhaalwinkel: winkels[3957]!, termijn: 2, teBetalen: 99.00))
+            reservaties.append(Reservatie(klant: klant, gewenstSpringkasteel: .JUNGLE, datum: date-100000, afhaalwinkel: winkels[3957]!, termijn: 2, teBetalen: 99.00))
         }
-        else {
-            return nil
-        }
+        return reservaties
     }
     
     private func assignToDictionary(springkasteel:Springkasteel, aantal: Int, dataInput:inout Dictionary<Springkasteel,Int>) -> [Springkasteel:Int] {

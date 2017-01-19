@@ -21,6 +21,7 @@ class ReservationManager {
     }
     
     // Beslissen welk 1 van de functies die we gaan gebruiken
+    /*
     static func haalReservatieOp(idNumber: Int, email:String) -> Reservatie? {
         // Met de rest api
         if let opgevraagdeReservatie = RestService.haalReservatieOp(idNr: idNumber, emailadres: email) {
@@ -36,6 +37,7 @@ class ReservationManager {
             }
         }
     }
+ */
     
     // Code moet nog worden aangepast voor passende request
     // Keuze maken tussen [Int:WinkelObject] of [Int:Winkel]
@@ -61,9 +63,7 @@ class ReservationManager {
     
     static func haalReservatieOpVoorKlantMetEmail(_ email: String) -> [Reservatie] {
         var reservaties:[Reservatie] = []
-        if let reservatie = tempData.getReservaties(emailAdres: email) {
-           reservaties.append(reservatie)
-        }
+        reservaties = tempData.getReservaties(emailAdres: email) ?? []
         return reservaties
     }
     
