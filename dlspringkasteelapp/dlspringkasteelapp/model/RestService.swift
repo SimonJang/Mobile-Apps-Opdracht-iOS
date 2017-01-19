@@ -2,10 +2,9 @@
 //  RestService.swift
 //  springkasteelapp
 
-
+// Code gebaseerd op https://devdactic.com/parse-json-with-swift/ voor REST calls
 //  Deze klasse haalt de data op van de REST service
 // TODO implementeren asap maar eerst CocoaPods configureren
-// !! ASAP !!
 
 import Foundation
 class RestService {
