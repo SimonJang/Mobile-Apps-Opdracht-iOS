@@ -36,6 +36,11 @@ class ReservationManager {
         }
     }
     
+    // Code moet nog worden aangepast voor passende request
+    // Keuze maken tussen [Int:WinkelObject] of [Int:Winkel]
+    // Zelfs Int kan nog worden aangepast naar String
+    
+    /*
     func haalWinkelsOp() -> [Int:Winkel] {
         if let winkels = RestService.getWinkels() {
             return winkels
@@ -49,6 +54,7 @@ class ReservationManager {
         }
         return [:]
     }
+    */
     
     // Testen voor functionaliteit
     
