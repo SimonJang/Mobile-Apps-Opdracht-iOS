@@ -18,15 +18,49 @@ class ZoekReservatieViewController: UIViewController {
         super.didReceiveMemoryWarning()
         
     }
+    @IBOutlet weak var emailTxt: UITextField?
+    @IBOutlet weak var warningTxt: UILabel?
     
-    @IBAction func toonReservaties(_ sender: UIButton) {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch(identifier) {
+        case "ZoekReservatie":
+            if let input = emailTxt?.text {
+                print(input)
+                let reservaties = ReservationManager.haalReservatieOpVoorKlantMetEmail(input)
+                if reservaties.count == 0 {
+                    emailTxt!.text = " "
+                    warningTxt!.isHidden = false
+                    return false
+                }
+                else {
+                    return true
+                }
+            }
+            else {
+               return false
+            }
+        default:
+            return true
+        }
         
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /*
         if segue.identifier == "ZoekReservatie" {
-            
+            if let input = emailTxt?.text {
+                let reservaties = ReservationManager.haalReservatieOpVoorKlantMetEmail(input)
+                if reservaties.count == 0 {
+                    emailTxt!.text = " "
+                    warningTxt!.isHidden = false
+                }
+                else {
+                    var destination = segue.destination as? UITableViewController
+                    
+                }
+            }
         }
+ */
     }
  
 

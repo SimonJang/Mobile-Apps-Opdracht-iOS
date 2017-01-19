@@ -66,7 +66,6 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Zoeken"/>
                                         <connections>
-                                            <action selector="toonReservaties:" destination="YaJ-Fs-Kmy" eventType="touchUpInside" id="FGG-bI-79V"/>
                                             <segue destination="XiC-El-dxX" kind="show" identifier="ZoekReservatie" id="GRp-JC-qiK"/>
                                         </connections>
                                     </button>
@@ -90,6 +89,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ib0-BU-tEj"/>
+                    <connections>
+                        <outlet property="emailTxt" destination="L0g-g0-oUS" id="sUx-7j-ltU"/>
+                        <outlet property="warningTxt" destination="nTH-5z-CDg" id="ATf-yH-tOf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AR-bu-sdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

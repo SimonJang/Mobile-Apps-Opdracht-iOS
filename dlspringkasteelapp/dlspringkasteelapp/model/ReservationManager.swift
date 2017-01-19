@@ -60,6 +60,7 @@ class ReservationManager {
     */
     
     // Haal reservatie op voor bepaalde klant
+    // --> GEBRUIKT
     
     static func haalReservatieOpVoorKlantMetEmail(_ email: String) -> [Reservatie] {
         var reservaties:[Reservatie] = []
@@ -92,6 +93,8 @@ class ReservationManager {
         return springkastelen;
     }
     
+    
+    // Momenteel niet toepassen
     private func haalReservatiesOp() -> [Reservatie]? {
         // Nog niet zeker of dit in de app gebeurt of in de backend
         // Met behulp van dummy data
