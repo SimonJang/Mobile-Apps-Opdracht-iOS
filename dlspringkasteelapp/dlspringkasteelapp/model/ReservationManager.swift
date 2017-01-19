@@ -14,6 +14,7 @@ class ReservationManager {
     // Vervangen met echte service wanneer klaar
     static var tempData:DummyData = DummyData()
     static var huidigeGebruiker: String = ""
+    static var geselecteerdeWinkel: Winkel? = nil
     
     func maakReservatie(klantVoorReservatie: Klant,springkasteel: Springkasteel, winkel: Winkel, date:Date) -> Bool {
         let nieuweReservatie = Reservatie(klant:klantVoorReservatie, gewenstSpringkasteel: springkasteel, datum: date, afhaalwinkel: winkel, termijn: 1, teBetalen: 99.00)

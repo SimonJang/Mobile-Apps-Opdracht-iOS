@@ -158,10 +158,10 @@
             </objects>
             <point key="canvasLocation" x="580" y="-382.75862068965517"/>
         </scene>
-        <!--View Controller-->
+        <!--Datum Selector View Controller-->
         <scene sceneID="K0B-8F-AUG">
             <objects>
-                <viewController id="OAQ-9f-7hq" sceneMemberID="viewController">
+                <viewController id="OAQ-9f-7hq" customClass="DatumSelectorViewController" customModule="dlspringkasteelapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OB8-x2-nNT"/>
                         <viewControllerLayoutGuide type="bottom" id="qac-g2-fik"/>

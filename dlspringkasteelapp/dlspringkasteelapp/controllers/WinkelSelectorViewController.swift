@@ -43,17 +43,25 @@ class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let keys = Array(winkels.keys)
+        if let winkel = winkels[keys[row]] {
+            ReservationManager.geselecteerdeWinkel = winkel
+        }
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if ReservationManager.geselecteerdeWinkel == nil {
+            let keys = Array(winkels.keys)
+            if let winkel = winkels[keys[0]] {
+                ReservationManager.geselecteerdeWinkel = winkel
+            }
+        }
     }
-    */
+ 
 
 }

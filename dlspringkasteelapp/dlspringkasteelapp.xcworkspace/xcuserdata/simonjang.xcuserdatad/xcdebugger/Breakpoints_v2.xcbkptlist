@@ -9,14 +9,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "dlspringkasteelapp/controllers/WinkelSelectorViewController.swift"
-            timestampString = "506538119.725957"
+            filePath = "dlspringkasteelapp/model/ReservationManager.swift"
+            timestampString = "506540260.476774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "pickerView(_:titleForRow:forComponent:)"
-            landmarkType = "7">
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "ReservationManager"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -25,14 +25,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "dlspringkasteelapp/controllers/WinkelSelectorViewController.swift"
-            timestampString = "506538119.725957"
+            filePath = "dlspringkasteelapp/model/ReservationManager.swift"
+            timestampString = "506540315.674123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "pickerView(_:titleForRow:forComponent:)"
-            landmarkType = "7">
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "ReservationManager"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dlspringkasteelapp.ReservationManager.geselecteerdeWinkel.unsafeMutableAddressor : Swift.Optional&lt;dlspringkasteelapp.Winkel&gt;"
+                  moduleName = "dlspringkasteelapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/simonjang/Desktop/opdracht%20ios/dlspringkasteelapp/dlspringkasteelapp/model/ReservationManager.swift"
+                  timestampString = "506540330.583418"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static dlspringkasteelapp.ReservationManager.geselecteerdeWinkel.getter : Swift.Optional&lt;dlspringkasteelapp.Winkel&gt;"
+                  moduleName = "dlspringkasteelapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/simonjang/Desktop/opdracht%20ios/dlspringkasteelapp/dlspringkasteelapp/model/ReservationManager.swift"
+                  timestampString = "506540330.58544"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static dlspringkasteelapp.ReservationManager.geselecteerdeWinkel.setter : Swift.Optional&lt;dlspringkasteelapp.Winkel&gt;"
+                  moduleName = "dlspringkasteelapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/simonjang/Desktop/opdracht%20ios/dlspringkasteelapp/dlspringkasteelapp/model/ReservationManager.swift"
+                  timestampString = "506540330.587417"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "57">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
