@@ -20,7 +20,23 @@ class ReservationManager {
         RestService.maakReservatie(reservatie: nieuweReservatie)
         return false
     }
-    
+
+    static func haalWinkelsOp() -> [Int:Winkel] {
+        var winkels:[Int:Winkel] = [:]
+        winkels = tempData.getWinkels() ?? [:]
+        return winkels
+    }
+
+    static func haalReservatieOpVoorKlantMetEmail(_ email: String) -> [Reservatie] {
+        var reservaties:[Reservatie] = []
+        reservaties = tempData.getReservaties(emailAdres: email) ?? []
+        reservaties = reservaties.sorted(by: { $0.datum.compare($1.datum) == ComparisonResult.orderedAscending })
+        return reservaties
+    }
+
+
+
+
     // Beslissen welk 1 van de functies die we gaan gebruiken
     /*
     static func haalReservatieOp(idNumber: Int, email:String) -> Reservatie? {
@@ -45,12 +61,15 @@ class ReservationManager {
     // Zelfs Int kan nog worden aangepast naar String
     
     /*
+    
     func haalWinkelsOp() -> [Int:Winkel] {
         if let winkels = RestService.getWinkels() {
             return winkels
         }
         return [:]
     }
+    
+    /*
     
     func haalSpringkastelenOp(winkelnummer: Int) -> [Springkasteel:Int] {
         if let springkastelen = RestService.getSpringkastelen(winkelId: winkelnummer) {
@@ -63,13 +82,7 @@ class ReservationManager {
     // Haal reservatie op voor bepaalde klant
     // --> GEBRUIKT
     
-    static func haalReservatieOpVoorKlantMetEmail(_ email: String) -> [Reservatie] {
-        var reservaties:[Reservatie] = []
-        reservaties = tempData.getReservaties(emailAdres: email) ?? []
-        reservaties = reservaties.sorted(by: { $0.datum.compare($1.datum) == ComparisonResult.orderedAscending })
-        return reservaties
-    }
-    
+ 
     // Testen voor functionaliteit
     
     func controleerDatum(datum:Date, reservaties:[Reservatie]) -> [Reservatie] {
@@ -109,4 +122,6 @@ class ReservationManager {
         // Kan ook in backend gebeuren, design beslissing moet nog worden gemaakt
     }
     
+}
+*/
 }
