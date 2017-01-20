@@ -92,8 +92,18 @@ class RestService: NSObject {
         return confirmation
     }
     
-    func zoekReservatie(email:String) -> [ReservatieObject]? {
-        return nil
+    func zoekReservaties(email:String) -> [ReservatieObject]? {
+        let hashed = UtilityServices.utilServices.md5(string: email)
+        let endPoint = "http://localhost:3000/api/reservaties/\(hashed)"
+        var reservatiesArr:[ReservatieObject]? = nil
+        
+        let json = JSON(Alamofire.request(endPoint))
+        for(_, object) in json {
+            reservatiesArr?.append(ReservatieObject(object))
+        }
+        
+        return reservatiesArr
+        
     }
     
 }
