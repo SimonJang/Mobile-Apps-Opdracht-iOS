@@ -475,7 +475,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgK-EY-Lg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-728" y="1834"/>
+            <point key="canvasLocation" x="246" y="1886"/>
         </scene>
         <!--Huur Detail Split View Controller-->
         <scene sceneID="CpG-xO-QjK">
@@ -528,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVo-39-DIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184.8" y="2373.4632683658174"/>
+            <point key="canvasLocation" x="2137" y="2369"/>
         </scene>
         <!--Voorwaarden en informatie-->
         <scene sceneID="NcX-W7-29P">
@@ -581,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFm-r8-34s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184.8" y="1606.1469265367318"/>
+            <point key="canvasLocation" x="2137" y="1606"/>
         </scene>
         <!--Reserveer springkasteel-->
         <scene sceneID="FYj-zi-tpt">
@@ -618,10 +618,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTt-cC-e7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="1607"/>
+            <point key="canvasLocation" x="1185" y="1605"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IfR-PG-a8Q"/>
+        <segue reference="bgv-Gq-hXS"/>
     </inferredMetricsTieBreakers>
 </document>
