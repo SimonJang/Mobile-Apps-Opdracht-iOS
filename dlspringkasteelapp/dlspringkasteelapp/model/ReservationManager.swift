@@ -20,8 +20,8 @@ class ReservationManager {
     
     func maakReservatie(klantVoorReservatie: Klant,springkasteel: Springkasteel, winkel: Winkel, date:Date) -> Bool {
         let nieuweReservatie = Reservatie(klant:klantVoorReservatie, gewenstSpringkasteel: springkasteel, datum: date, afhaalwinkel: winkel, termijn: 1, teBetalen: 99.00)
-        RestService.maakReservatie(reservatie: nieuweReservatie)
-        return false
+        let confirmation = RestService.sharedInstance.maakReservatie(reservatie: nieuweReservatie)
+        return confirmation
     }
 
     static func haalWinkelsOp() -> [Int:Winkel] {

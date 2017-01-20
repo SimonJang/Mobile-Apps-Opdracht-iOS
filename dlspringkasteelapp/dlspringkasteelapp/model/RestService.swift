@@ -2,12 +2,15 @@
 //  RestService.swift
 //  springkasteelapp
 
-// Code gebaseerd op 
+// Code gebaseerd op
 //      https://devdactic.com/parse-json-with-swift/
 //      https://github.com/Alamofire/Alamofire voorbeelden
 //      https://github.com/SwiftyJSON/SwiftyJSON voorbeelden
-//  Deze klasse haalt de data op van de REST service
-// TODO implementeren asap maar eerst CocoaPods configureren
+//      https://grokswift.com/rest-with-alamofire-swiftyjson/ voorbeelden
+//
+//  Deze klasse haalt de data op van een REST service
+
+
 
 import SwiftyJSON
 import Alamofire
@@ -17,15 +20,11 @@ class RestService: NSObject {
     
     static let sharedInstance = RestService()
     
-    // GET Request voor alle winkels (inclusief aantal springkastelen)
-    // Haalt alle informatie van elke winkel op.
-    // Zie Winkelobject klasse voor attributen die worden opgevraagd
-    
-    static func getWinkels() -> [Int:WinkelObject]? {
+    func getWinkels() -> [Int:WinkelObject]? {
         
         var returnDict:[Int:WinkelObject] = [:]
         
-        let json = JSON(Alamofire.request("https://x.herokuapp.com/winkels"))
+        let json = JSON(Alamofire.request("http://localhost:3000/api/winkels"))
         for (_, object) in json {
             let winkel = WinkelObject(object)
             returnDict[Int(winkel.storeID)!] = winkel
@@ -34,23 +33,69 @@ class RestService: NSObject {
         return returnDict
     }
     
-    static func getSpringkastelenForDate(winkelId: Int, datum:Date) -> [Springkasteel: Int]? {
-        // TODO GET van REST-service
-        return [:]
+    func getSpringkastelenForDate(winkelId: Int, datum:Date) -> [Springkasteel: Int]? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        let stringDate = dateFormatter.string(from: datum)
+        
+        var returnDict:[Springkasteel:Int] = [:]
+        
+        let endPoint = "http://localhost:3000/api/winkels"
+        let post:[String:Any] = ["winkelID":String(winkelId), "datum":stringDate]
+        
+        let json = JSON(Alamofire.request(endPoint, method: .post, parameters: post, encoding: JSONEncoding.default))
+        for(_, object) in json {
+            switch(object) {
+            case object["JUNGLE"]:
+                returnDict[.JUNGLE] = object["JUNGLE"].intValue
+            
+            case object["PIRAAT"]:
+                returnDict[.PIRAAT] = object["PIRAAT"].intValue
+            
+            case object["JUMP"]:
+                returnDict[.JUMP] = object["JUMP"].intValue
+                
+            case object["CIRCUS"]:
+                returnDict[.CIRCUS] = object["CIRCUS"].intValue
+                
+            default:
+                break
+        
+            }
+        }
+        return returnDict
     }
     
-    static func maakReservatie (reservatie: Reservatie) {
-        // TODO POST naar REST-service
+    func maakReservatie (reservatie: Reservatie) -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        
+        let endPoint = "http://localhost:3000/api/winkels/reservatie"
+        var confirmation:Bool = false
+        
+        let email = reservatie.klant.email
+        let datumString = dateFormatter.string(from:reservatie.datum)
+        
+        let post:[String:Any] =
+            ["winkel": String(reservatie.store.storeId),
+             "type": String(describing: reservatie.springkasteel),
+             "email": email,
+             "datum": datumString]
+        
+        let json = JSON(Alamofire.request(endPoint, method: .post, parameters: post, encoding: JSONEncoding.default))
+        for (_, object) in json {
+            confirmation = object["confirmation"].boolValue
+        }
+        
+        return confirmation
     }
     
-    static func haalReservatieOp(idNr: Int, emailadres: String) -> Reservatie? {
-        // TODO GET naar REST service voor afzonderlijke reservatie
-        return nil;
+    func zoekReservatie(email:String) -> [ReservatieObject]? {
+        return nil
     }
     
-    static func haalReservatiesOp() {
-        // Ophalen van datum, nog niet zeker of dat in backend gebeurt of in Swift zelf
-    }
 }
 
 class WinkelObject {
@@ -74,3 +119,26 @@ class WinkelObject {
         JUMP = json["JUMP"].intValue
     }
 }
+
+class ReservatieObject {
+    var datum:Date?
+    var type:Springkasteel?
+    var winkelNaam: String
+    // Placeholders
+    let prijs = 99.0
+    let termijn = 2
+    
+    required init(_ json: JSON) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        let dateString = json["datum"].stringValue
+        
+        datum = dateFormatter.date(from:dateString)
+        type = Springkasteel(rawValue: json["type"].stringValue)
+        winkelNaam = json["winkel"].stringValue
+        
+        
+    }
+}
+
