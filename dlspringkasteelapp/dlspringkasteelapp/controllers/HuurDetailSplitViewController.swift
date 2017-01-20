@@ -77,8 +77,10 @@ class HuurDetailSplitViewController: UIViewController {
 }
 
 // Code overgenomen uit http://stackoverflow.com/questions/28496093/making-text-bold-using-attributed-string-in-swift
-// Ik wil verschillende subsecties maken in de UITextView maar niet hardcoded in de storyboard
+// Ik wil verschillende subsecties maken in de UITextView maar niet hardcoded in het storyboard
 // Bovenstaande link voorziet deze methode
+// Deze code zou best naar model code gaan
+// TODO aanpassen deze code
 
 extension NSMutableAttributedString {
     func bold(_ text:String) -> NSMutableAttributedString {

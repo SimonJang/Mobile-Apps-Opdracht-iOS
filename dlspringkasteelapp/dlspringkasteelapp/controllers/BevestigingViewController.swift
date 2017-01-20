@@ -12,15 +12,20 @@ class BevestigingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func popStack(_ sender: UIButton) {
+        if let controller =  self.navigationController {
+            controller.popToRootViewController(animated: true)
+        }
+    }
 
     /*
     // MARK: - Navigation
