@@ -161,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="1185" y="-196"/>
         </scene>
-        <!--Datum Selector View Controller-->
+        <!--Datum kiezen-->
         <scene sceneID="K0B-8F-AUG">
             <objects>
                 <viewController id="OAQ-9f-7hq" customClass="DatumSelectorViewController" customModule="dlspringkasteelapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -210,6 +210,9 @@
                             <constraint firstItem="qac-g2-fik" firstAttribute="top" secondItem="Gl0-eu-Xh5" secondAttribute="bottom" constant="21" id="uRN-S0-gAK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Datum kiezen" id="nKt-d2-Umt">
+                        <barButtonItem key="backBarButtonItem" title="Terug" id="25F-sR-Enw"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="HE8-Mk-xtK" id="57x-PP-95p"/>
                     </connections>
@@ -444,11 +447,11 @@
             </objects>
             <point key="canvasLocation" x="2136.8000000000002" y="786.65667166416802"/>
         </scene>
-        <!--Reservatie opzoeken-->
+        <!--Zoeken-->
         <scene sceneID="z1F-63-KHI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1CR-pg-4Fg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reservatie opzoeken" id="kmu-fk-hve"/>
+                    <tabBarItem key="tabBarItem" title="Zoeken" id="kmu-fk-hve"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JrZ-BL-rYn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -463,11 +466,11 @@
             </objects>
             <point key="canvasLocation" x="245.59999999999999" y="786.65667166416802"/>
         </scene>
-        <!--Voorwaarden-->
+        <!--Info-->
         <scene sceneID="hkg-lF-YeU">
             <objects>
                 <splitViewController id="45d-yZ-CGB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Voorwaarden" id="w0i-L8-uwf"/>
+                    <tabBarItem key="tabBarItem" title="Info" id="w0i-L8-uwf"/>
                     <connections>
                         <segue destination="JHL-7j-Ofd" kind="relationship" relationship="masterViewController" id="new-r1-NqV"/>
                         <segue destination="m2f-re-Cxc" kind="relationship" relationship="detailViewController" id="bgv-Gq-hXS"/>
@@ -583,11 +586,11 @@
             </objects>
             <point key="canvasLocation" x="2137" y="1606"/>
         </scene>
-        <!--Reserveer springkasteel-->
+        <!--Reserveren-->
         <scene sceneID="FYj-zi-tpt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CW8-77-WOa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reserveer springkasteel" id="6vl-ep-SAg"/>
+                    <tabBarItem key="tabBarItem" title="Reserveren" id="6vl-ep-SAg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iC3-Bq-px3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
