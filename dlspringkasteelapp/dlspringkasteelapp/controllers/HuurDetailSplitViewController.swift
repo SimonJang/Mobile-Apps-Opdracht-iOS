@@ -74,22 +74,11 @@ class HuurDetailSplitViewController: UIViewController {
             mainTxt.attributedText = formattedString
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 // Code overgenomen uit http://stackoverflow.com/questions/28496093/making-text-bold-using-attributed-string-in-swift
-// Ik wil verschillende subsecties maken in de UITextView
+// Ik wil verschillende subsecties maken in de UITextView maar niet hardcoded in de storyboard
+// Bovenstaande link voorziet deze methode
 
 extension NSMutableAttributedString {
     func bold(_ text:String) -> NSMutableAttributedString {

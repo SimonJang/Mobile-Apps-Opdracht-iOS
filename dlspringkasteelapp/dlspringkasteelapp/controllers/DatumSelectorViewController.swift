@@ -10,10 +10,11 @@ import UIKit
 
 class DatumSelectorViewController: UIViewController {
 
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.configureDatePicker()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +22,30 @@ class DatumSelectorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func configureDatePicker() {
+        let date = Date()
+        let calendar = Calendar.current
+        let currentYear = String(calendar.component(.year, from:date) + 1)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        let maxDateString = "31-12-\(currentYear)"
+        let maxDate = dateFormatter.date(from:maxDateString)
+        
+        datePicker.datePickerMode = .date
+        datePicker.minimumDate = date
+        datePicker.maximumDate = maxDate
     }
-    */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination
+        if let identifier = segue.identifier {
+            switch(identifier) {
+            case "toonSpringkastelen":
+                ReservationManager.geselecteerdeDatum = datePicker.date
+            default:
+                break
+            }
+        }
+        
+    }
 }

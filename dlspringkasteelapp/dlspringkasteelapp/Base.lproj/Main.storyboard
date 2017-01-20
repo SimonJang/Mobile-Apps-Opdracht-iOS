@@ -193,7 +193,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Toon beschikbare springkastelen"/>
                                         <connections>
-                                            <segue destination="Qbb-g9-NY5" kind="show" id="j5t-7q-E2C"/>
+                                            <segue destination="Qbb-g9-NY5" kind="show" identifier="toonSpringkastelen" id="j5t-7q-E2C"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -208,15 +208,18 @@
                             <constraint firstItem="qac-g2-fik" firstAttribute="top" secondItem="Gl0-eu-Xh5" secondAttribute="bottom" constant="21" id="uRN-S0-gAK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="HE8-Mk-xtK" id="57x-PP-95p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqI-vv-IiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2137" y="-196"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Spring Kasteel Table View Controller-->
         <scene sceneID="8kC-8k-RPJ">
             <objects>
-                <tableViewController id="Qbb-g9-NY5" sceneMemberID="viewController">
+                <tableViewController id="Qbb-g9-NY5" customClass="SpringKasteelTableViewController" customModule="dlspringkasteelapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZHY-bw-c8Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

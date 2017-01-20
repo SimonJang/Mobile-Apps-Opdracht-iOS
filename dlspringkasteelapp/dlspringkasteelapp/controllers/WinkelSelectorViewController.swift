@@ -38,7 +38,7 @@ class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPi
             return naam
         }
         else {
-            return "KAPUT"
+            return "Werkt niet"
         }
     }
     
