@@ -35,9 +35,11 @@ class ReservationManager {
         reservaties = reservaties.sorted(by: { $0.datum.compare($1.datum) == ComparisonResult.orderedAscending })
         return reservaties
     }
-
-
-
+    
+    static func haalSpringkastelenOp() -> [Springkasteel:Int] {
+        let springKastelen = tempData.getAantalSpringkastelen(winkelId: geselecteerdeWinkel!.storeId) ?? [:]
+        return springKastelen
+    }
 
     // Beslissen welk 1 van de functies die we gaan gebruiken
     /*

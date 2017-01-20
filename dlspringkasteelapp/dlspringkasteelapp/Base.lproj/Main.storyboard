@@ -102,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="1184.8" y="786.65667166416802"/>
         </scene>
-        <!--Winkel Selector View Controller-->
+        <!--Winkel kiezen-->
         <scene sceneID="bQa-de-dwL">
             <objects>
                 <viewController id="tg7-Yc-x4X" customClass="WinkelSelectorViewController" customModule="dlspringkasteelapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,7 +133,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Ga verder"/>
                                         <connections>
-                                            <segue destination="OAQ-9f-7hq" kind="show" id="rQa-0P-GER"/>
+                                            <segue destination="OAQ-9f-7hq" kind="show" identifier="naarDatumSelector" id="rQa-0P-GER"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -150,7 +150,9 @@
                             <constraint firstItem="24b-um-Lpk" firstAttribute="centerX" secondItem="0Uc-aa-zCi" secondAttribute="centerX" id="uKj-ny-nGn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nTj-tR-50O"/>
+                    <navigationItem key="navigationItem" title="Winkel kiezen" id="nTj-tR-50O">
+                        <barButtonItem key="backBarButtonItem" title="Terug" id="cib-4q-sro"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="winkelPicker" destination="Kpb-18-7NV" id="wrt-at-WWe"/>
                     </connections>
@@ -216,22 +218,25 @@
             </objects>
             <point key="canvasLocation" x="2137" y="-196"/>
         </scene>
-        <!--Spring Kasteel Table View Controller-->
+        <!--Beschikbare Springkastelen-->
         <scene sceneID="8kC-8k-RPJ">
             <objects>
                 <tableViewController id="Qbb-g9-NY5" customClass="SpringKasteelTableViewController" customModule="dlspringkasteelapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZHY-bw-c8Y">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZHY-bw-c8Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uv0-JX-134">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="springkasteelCel" id="8wq-qK-nr3">
+                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uv0-JX-134" id="rIH-mU-u1s">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8wq-qK-nr3" id="jQB-rx-Pfr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6RX-EV-3oH" kind="show" identifier="geefKlantGegevens" id="xKG-7N-5jV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -239,11 +244,31 @@
                             <outlet property="delegate" destination="Qbb-g9-NY5" id="g38-Qa-b7J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xjg-1J-SY4"/>
+                    <navigationItem key="navigationItem" title="Beschikbare Springkastelen" id="xjg-1J-SY4">
+                        <barButtonItem key="backBarButtonItem" title="Terug" id="7E0-t6-nOS"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Fd-3b-xCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3094" y="-196"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6wR-Qw-GsT">
+            <objects>
+                <viewController id="6RX-EV-3oH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UJB-Jw-gWr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ecf-QH-GgF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dQN-MV-77g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="300-Ui-zWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4015" y="-197"/>
         </scene>
         <!--Overzicht Reservaties-->
         <scene sceneID="baY-qP-85e">
