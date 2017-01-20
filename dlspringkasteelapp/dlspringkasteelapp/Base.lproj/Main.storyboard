@@ -304,7 +304,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyw-Oh-cNl">
                                         <rect key="frame" x="0.0" y="157.5" width="375" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Reserveer!"/>
@@ -321,23 +321,40 @@
                                     <constraint firstItem="Meq-5s-KaL" firstAttribute="width" secondItem="Fyh-gG-fgK" secondAttribute="width" id="w4L-jd-Krx"/>
                                 </constraints>
                             </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gelieve een e-mail adres in te geven!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjz-XE-U6l">
+                                <rect key="frame" x="-0.5" y="358" width="375" height="24"/>
+                                <color key="backgroundColor" red="1" green="0.12060499500000001" blue="0.1012575464" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Fyh-gG-fgK" firstAttribute="top" secondItem="yjz-XE-U6l" secondAttribute="bottom" constant="20.5" id="BC1-Qc-6lj"/>
+                            <constraint firstItem="yjz-XE-U6l" firstAttribute="width" secondItem="dQN-MV-77g" secondAttribute="width" id="Gye-2n-lRB"/>
+                            <constraint firstItem="yjz-XE-U6l" firstAttribute="centerX" secondItem="dQN-MV-77g" secondAttribute="centerX" id="KZb-bo-rhn"/>
                             <constraint firstItem="Fyh-gG-fgK" firstAttribute="centerX" secondItem="dQN-MV-77g" secondAttribute="centerX" id="WiS-bT-dvc"/>
                             <constraint firstItem="Fyh-gG-fgK" firstAttribute="width" secondItem="dQN-MV-77g" secondAttribute="width" id="ovR-02-W6T"/>
                             <constraint firstItem="Ecf-QH-GgF" firstAttribute="top" secondItem="Fyh-gG-fgK" secondAttribute="bottom" constant="28" id="vSn-WA-1Yf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datumLabel" destination="EFE-1n-c7g" id="VMb-Le-W5A"/>
+                        <outlet property="emailTxt" destination="K0c-cM-n5C" id="r7w-z5-gwj"/>
+                        <outlet property="titelLabel" destination="Meq-5s-KaL" id="zfV-aP-5R5"/>
+                        <outlet property="warningEmptyMail" destination="yjz-XE-U6l" id="h6v-72-U3y"/>
+                        <outlet property="winkelLabel" destination="byI-tZ-YbI" id="QSI-fX-cCa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="300-Ui-zWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4013.5999999999999" y="-197.45127436281859"/>
         </scene>
-        <!--View Controller-->
+        <!--Bevestiging View Controller-->
         <scene sceneID="Bmq-to-996">
             <objects>
-                <viewController id="zGZ-7X-d7j" sceneMemberID="viewController">
+                <viewController id="zGZ-7X-d7j" customClass="BevestigingViewController" customModule="dlspringkasteelapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cuC-6b-oWb"/>
                         <viewControllerLayoutGuide type="bottom" id="qGO-QM-WEQ"/>

@@ -57,6 +57,7 @@
 		88F7B8AB1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HuurDetailSplitViewController.swift; path = controllers/HuurDetailSplitViewController.swift; sourceTree = "<group>"; };
 		88F7B8AD1E321BA800F25BB1 /* SpringKasteelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringKasteelTableViewController.swift; path = controllers/SpringKasteelTableViewController.swift; sourceTree = "<group>"; };
 		88F7B8AF1E3231DA00F25BB1 /* ReserveerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReserveerViewController.swift; path = controllers/ReserveerViewController.swift; sourceTree = "<group>"; };
+		88F7B8B11E323F1400F25BB1 /* BevestigingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BevestigingViewController.swift; path = controllers/BevestigingViewController.swift; sourceTree = "<group>"; };
 		B2F73B15B1774A7391F23C8A /* Pods_dlspringkasteelapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dlspringkasteelapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,6 +140,7 @@
 				88F7B8AB1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift */,
 				88F7B8AD1E321BA800F25BB1 /* SpringKasteelTableViewController.swift */,
 				88F7B8AF1E3231DA00F25BB1 /* ReserveerViewController.swift */,
+				88F7B8B11E323F1400F25BB1 /* BevestigingViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -292,6 +294,7 @@
 				887056DD1E30E3DC00201958 /* ReservatieTableViewController.swift in Sources */,
 				884911B51E2FD32000F8492C /* RestService.swift in Sources */,
 				884911B11E2FD2E400F8492C /* Springkasteel.swift in Sources */,
+				88F7B8B21E323F1400F25BB1 /* BevestigingViewController.swift in Sources */,
 				887056DF1E311F7F00201958 /* WinkelSelectorViewController.swift in Sources */,
 				887056DB1E30E1F400201958 /* ZoekReservatieViewController.swift in Sources */,
 				884911AF1E2FD2C600F8492C /* Winkel.swift in Sources */,

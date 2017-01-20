@@ -25,10 +25,7 @@ class SpringKasteelTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -50,6 +47,13 @@ class SpringKasteelTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let keys = Array(springKastelen.keys)
+        if segue.identifier == "geefKlantGegevens", let destinationVC = segue.destination as? ReserveerViewController {
+            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+                let selectedIndex = indexPath.row
+                destinationVC.springkasteel = keys[selectedIndex].rawValue
+            }
+        }
         
     }
 }

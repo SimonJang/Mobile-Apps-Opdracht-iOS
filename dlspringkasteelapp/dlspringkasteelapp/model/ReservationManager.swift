@@ -16,6 +16,7 @@ class ReservationManager {
     static var huidigeGebruiker: String = ""
     static var geselecteerdeWinkel: Winkel? = nil
     static var geselecteerdeDatum: Date? = nil
+    static var emailKlant: String = ""
     
     func maakReservatie(klantVoorReservatie: Klant,springkasteel: Springkasteel, winkel: Winkel, date:Date) -> Bool {
         let nieuweReservatie = Reservatie(klant:klantVoorReservatie, gewenstSpringkasteel: springkasteel, datum: date, afhaalwinkel: winkel, termijn: 1, teBetalen: 99.00)
@@ -39,6 +40,11 @@ class ReservationManager {
     static func haalSpringkastelenOp() -> [Springkasteel:Int] {
         let springKastelen = tempData.getAantalSpringkastelen(winkelId: geselecteerdeWinkel!.storeId) ?? [:]
         return springKastelen
+    }
+    
+    static func haalSpringkasteelOp(naam: String) -> Springkasteel {
+        let springkasteel = Springkasteel(rawValue: naam)
+        return springkasteel!
     }
 
     // Beslissen welk 1 van de functies die we gaan gebruiken
