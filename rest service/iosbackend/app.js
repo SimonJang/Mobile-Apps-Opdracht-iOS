@@ -2,6 +2,7 @@
 
 var express = require('express');
 var path = require('path');
+var cryptojs = require('crypto-js');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -18,6 +19,7 @@ require('./models/winkel');
 mongoose.connect('mongodb://localhost/springkasteel', function() {
   console.log('Mongoose connected. DB connection open');
   console.log(ip.address())
+  //console.log(cryptojs.md5("test123").toString())
 });
 
 

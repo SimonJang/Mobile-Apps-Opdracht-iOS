@@ -17,6 +17,9 @@ class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     
     override func viewDidLoad() {
+        
+        
+        
         super.viewDidLoad()
         
         dataModel.delegate = self
