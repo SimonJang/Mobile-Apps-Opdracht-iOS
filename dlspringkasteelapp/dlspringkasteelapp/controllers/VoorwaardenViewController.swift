@@ -7,24 +7,6 @@
 import UIKit
 
 class VoorwaardenViewController: UIViewController {
-
-    
-    @IBAction func praktBtn() {
-       /* if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            let detailViewController = controllers[controllers.count - 1] as? HuurDetailSplitViewController
-            detailViewController?.praktischValue = true
-            detailViewController?.viewDidLoad()
-        }*/
-    }
-    @IBAction func voorwaardenBtn() {
-        /*if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            let detailViewController = controllers[controllers.count - 1] as? HuurDetailSplitViewController
-            detailViewController?.voorwaardenValue = true
-            detailViewController?.viewDidLoad()
-        }*/
-    }
  
     override func viewDidLoad() {
         super.viewDidLoad()
