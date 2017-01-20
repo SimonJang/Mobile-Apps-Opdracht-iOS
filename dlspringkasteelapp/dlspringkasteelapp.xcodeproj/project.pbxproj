@@ -28,6 +28,7 @@
 		88F7B8AA1E31EDEB00F25BB1 /* VoorwaardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8A91E31EDEB00F25BB1 /* VoorwaardenViewController.swift */; };
 		88F7B8AC1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8AB1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift */; };
 		88F7B8AE1E321BA800F25BB1 /* SpringKasteelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8AD1E321BA800F25BB1 /* SpringKasteelTableViewController.swift */; };
+		88F7B8B01E3231DA00F25BB1 /* ReserveerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8AF1E3231DA00F25BB1 /* ReserveerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		88F7B8A91E31EDEB00F25BB1 /* VoorwaardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoorwaardenViewController.swift; path = controllers/VoorwaardenViewController.swift; sourceTree = "<group>"; };
 		88F7B8AB1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HuurDetailSplitViewController.swift; path = controllers/HuurDetailSplitViewController.swift; sourceTree = "<group>"; };
 		88F7B8AD1E321BA800F25BB1 /* SpringKasteelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringKasteelTableViewController.swift; path = controllers/SpringKasteelTableViewController.swift; sourceTree = "<group>"; };
+		88F7B8AF1E3231DA00F25BB1 /* ReserveerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReserveerViewController.swift; path = controllers/ReserveerViewController.swift; sourceTree = "<group>"; };
 		B2F73B15B1774A7391F23C8A /* Pods_dlspringkasteelapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dlspringkasteelapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 				88F7B8A91E31EDEB00F25BB1 /* VoorwaardenViewController.swift */,
 				88F7B8AB1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift */,
 				88F7B8AD1E321BA800F25BB1 /* SpringKasteelTableViewController.swift */,
+				88F7B8AF1E3231DA00F25BB1 /* ReserveerViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F7B8B01E3231DA00F25BB1 /* ReserveerViewController.swift in Sources */,
 				88F7B8AC1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift in Sources */,
 				884911B31E2FD30B00F8492C /* Klant.swift in Sources */,
 				884911B71E2FD33200F8492C /* DbService.swift in Sources */,
