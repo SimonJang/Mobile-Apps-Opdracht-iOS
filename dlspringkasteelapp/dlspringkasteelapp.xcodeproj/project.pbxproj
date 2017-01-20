@@ -25,10 +25,12 @@
 		887056DD1E30E3DC00201958 /* ReservatieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887056DC1E30E3DC00201958 /* ReservatieTableViewController.swift */; };
 		887056DF1E311F7F00201958 /* WinkelSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887056DE1E311F7F00201958 /* WinkelSelectorViewController.swift */; };
 		887056E11E3131BC00201958 /* DatumSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887056E01E3131BC00201958 /* DatumSelectorViewController.swift */; };
+		888CF0821E3266F0004C7FFF /* UtilityServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888CF0811E3266F0004C7FFF /* UtilityServices.swift */; };
 		88F7B8AA1E31EDEB00F25BB1 /* VoorwaardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8A91E31EDEB00F25BB1 /* VoorwaardenViewController.swift */; };
 		88F7B8AC1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8AB1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift */; };
 		88F7B8AE1E321BA800F25BB1 /* SpringKasteelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8AD1E321BA800F25BB1 /* SpringKasteelTableViewController.swift */; };
 		88F7B8B01E3231DA00F25BB1 /* ReserveerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8AF1E3231DA00F25BB1 /* ReserveerViewController.swift */; };
+		88F7B8B21E323F1400F25BB1 /* BevestigingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8B11E323F1400F25BB1 /* BevestigingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		887056DC1E30E3DC00201958 /* ReservatieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReservatieTableViewController.swift; path = controllers/ReservatieTableViewController.swift; sourceTree = "<group>"; };
 		887056DE1E311F7F00201958 /* WinkelSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WinkelSelectorViewController.swift; path = controllers/WinkelSelectorViewController.swift; sourceTree = "<group>"; };
 		887056E01E3131BC00201958 /* DatumSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatumSelectorViewController.swift; path = controllers/DatumSelectorViewController.swift; sourceTree = "<group>"; };
+		888CF07C1E32667B004C7FFF /* dlspringkasteelapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dlspringkasteelapp-Bridging-Header.h"; sourceTree = "<group>"; };
+		888CF0811E3266F0004C7FFF /* UtilityServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilityServices.swift; path = model/UtilityServices.swift; sourceTree = "<group>"; };
 		88F7B8A91E31EDEB00F25BB1 /* VoorwaardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoorwaardenViewController.swift; path = controllers/VoorwaardenViewController.swift; sourceTree = "<group>"; };
 		88F7B8AB1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HuurDetailSplitViewController.swift; path = controllers/HuurDetailSplitViewController.swift; sourceTree = "<group>"; };
 		88F7B8AD1E321BA800F25BB1 /* SpringKasteelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringKasteelTableViewController.swift; path = controllers/SpringKasteelTableViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				884911B41E2FD32000F8492C /* RestService.swift */,
 				884911B61E2FD33200F8492C /* DbService.swift */,
 				884911B81E2FD34500F8492C /* TempData.swift */,
+				888CF07C1E32667B004C7FFF /* dlspringkasteelapp-Bridging-Header.h */,
+				888CF0811E3266F0004C7FFF /* UtilityServices.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 					8849118F1E2FD23300F8492C = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = BHAN6528P7;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -294,6 +301,7 @@
 				887056DD1E30E3DC00201958 /* ReservatieTableViewController.swift in Sources */,
 				884911B51E2FD32000F8492C /* RestService.swift in Sources */,
 				884911B11E2FD2E400F8492C /* Springkasteel.swift in Sources */,
+				888CF0821E3266F0004C7FFF /* UtilityServices.swift in Sources */,
 				88F7B8B21E323F1400F25BB1 /* BevestigingViewController.swift in Sources */,
 				887056DF1E311F7F00201958 /* WinkelSelectorViewController.swift in Sources */,
 				887056DB1E30E1F400201958 /* ZoekReservatieViewController.swift in Sources */,
@@ -429,11 +437,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = BHAN6528P7;
 				INFOPLIST_FILE = dlspringkasteelapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = simon.jang.assignments.dlspringkasteelapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "dlspringkasteelapp/dlspringkasteelapp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -444,11 +455,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = BHAN6528P7;
 				INFOPLIST_FILE = dlspringkasteelapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = simon.jang.assignments.dlspringkasteelapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "dlspringkasteelapp/dlspringkasteelapp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
