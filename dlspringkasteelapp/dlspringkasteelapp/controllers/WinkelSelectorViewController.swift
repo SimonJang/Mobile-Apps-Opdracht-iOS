@@ -17,9 +17,6 @@ class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPi
         winkels = ReservationManager.haalWinkelsOp()
         winkelPicker.delegate = self
         winkelPicker.dataSource = self
-        
-        print(UtilityServices.utilServices.md5(string: "simon.jang.contact@gmail.com"))
-        
         super.viewDidLoad()
     }
 

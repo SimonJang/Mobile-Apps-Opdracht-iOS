@@ -16,22 +16,61 @@ import SwiftyJSON
 import Alamofire
 
 import Foundation
-class RestService: NSObject {
+class RestService {
     
     static let sharedInstance = RestService()
+    var sessionManager: SessionManager!
+    var returnWinkels:[WinkelObject] = []
     
-    func getWinkels() -> [Int:WinkelObject]? {
+    
+    func getWinkelsV2()  {
+
+        //let configuration = URLSessionConfiguration.default
+        //configuration.urlCache = nil
+        //let sessionManager = Alamofire.SessionManager(configuration: configuration)
         
-        var returnDict:[Int:WinkelObject] = [:]
+        Alamofire.request("http://localhost:3000/api/winkels").responseJSON(completionHandler:  {
+            response in
+            print(response)
+            guard let result = response.result.value as? AnyObject else {
+                print("Something went wrong with GET REQUEST to http://localhost:3000/api/winkels")
+                print("Error: \(response.result.error)")
+                return
+            }
+            var winkels:[WinkelObject] = []
+            let json = JSON(result)
+            for(_, object) in json {
+                let winkel = WinkelObject(object)
+                winkels.append(winkel)
+            }
+            self.returnWinkels = winkels
+            })
+    }
+    
+    
+    func getWinkels() -> [WinkelObject]? {
+        
+        getWinkelsV2()
+        
+        var returnArr:[WinkelObject]? = nil
+        
+        /*
+        
+        
         
         let json = JSON(Alamofire.request("http://localhost:3000/api/winkels"))
+        print(json)
         for (_, object) in json {
             let winkel = WinkelObject(object)
-            returnDict[Int(winkel.storeID)!] = winkel
+            returnArr?.append(winkel)
         }
         
-        return returnDict
+        */
+        
+        return self.returnWinkels
     }
+ 
+ 
     
     func getSpringkastelenForDate(winkelId: Int, datum:Date) -> [Springkasteel: Int]? {
         let dateFormatter = DateFormatter()
@@ -105,7 +144,6 @@ class RestService: NSObject {
         return reservatiesArr
         
     }
-    
 }
 
 class WinkelObject {
@@ -118,7 +156,7 @@ class WinkelObject {
     var CIRCUS: Int
     var JUMP: Int
     
-    required init(_ json: JSON) {
+    required init(_ json:JSON) {
         naam = json["naam"].stringValue
         adres = json["adres"].stringValue
         telefoonnummer = json["telefoonnummer"].stringValue
@@ -128,6 +166,18 @@ class WinkelObject {
         CIRCUS = json["CIRCUS"].intValue
         JUMP = json["JUMP"].intValue
     }
+    /*
+    required init(_ json: [String:Any]) {
+        naam = String(describing: json["naam"])
+        adres = String(describing: json["adres"])
+        telefoonnummer = String(describing: json["telefoonnummer"])
+        storeID = String(describing: json["storeID"])
+        JUNGLE = Int(String(describing: json["JUNGLE"]))!
+        PIRAAT = Int(String(describing: json["PIRAAT"]))!
+        CIRCUS = Int(String(describing: json["CIRCUS"]))!
+        JUMP = Int(String(describing: json["JUMP"]))!
+    }
+    */
 }
 
 class ReservatieObject {
@@ -147,8 +197,6 @@ class ReservatieObject {
         datum = dateFormatter.date(from:dateString)
         type = Springkasteel(rawValue: json["type"].stringValue)
         winkelNaam = json["winkel"].stringValue
-        
-        
     }
 }
 

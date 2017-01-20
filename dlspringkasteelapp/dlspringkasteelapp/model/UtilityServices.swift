@@ -35,4 +35,16 @@ class UtilityServices {
         return returnString
     }
     
+    func convertWinkelObjectToWinkelDict(input:[WinkelObject]?) -> [Int:Winkel] {
+        var returnDict:[Int:Winkel] = [:]
+        
+        if input != nil {
+            for winkelObj in input! {
+                returnDict[Int(winkelObj.storeID)!] = Winkel(storeID: Int(winkelObj.storeID)!, storeNAME: winkelObj.naam)
+            }
+        }
+        
+        return returnDict
+    }
+    
 }

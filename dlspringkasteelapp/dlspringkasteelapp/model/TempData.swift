@@ -56,7 +56,7 @@ class DummyData {
     
     func getReservaties(emailAdres: String) -> [Reservatie]? {
         var reservaties:[Reservatie] = []
-        self.getWinkels()
+        getWinkels()
         let klant = Klant(f_name: "Simon",l_name: "Jang", klantEmail: "simon@test.be")
         let date = Date() - 800000
         if(emailAdres == "simon@test.be") {

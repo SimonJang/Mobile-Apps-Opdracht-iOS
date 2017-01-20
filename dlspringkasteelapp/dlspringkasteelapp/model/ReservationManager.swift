@@ -18,17 +18,22 @@ class ReservationManager {
     static var geselecteerdeDatum: Date? = nil
     static var emailKlant: String = ""
     
+    /* WERKENDE IMPLEMENTATIE MET TEMPDATA*/
+    
     func maakReservatie(klantVoorReservatie: Klant,springkasteel: Springkasteel, winkel: Winkel, date:Date) -> Bool {
         let nieuweReservatie = Reservatie(klant:klantVoorReservatie, gewenstSpringkasteel: springkasteel, datum: date, afhaalwinkel: winkel, termijn: 1, teBetalen: 99.00)
         let confirmation = RestService.sharedInstance.maakReservatie(reservatie: nieuweReservatie)
         return confirmation
     }
-
+    /*
     static func haalWinkelsOp() -> [Int:Winkel] {
         var winkels:[Int:Winkel] = [:]
         winkels = tempData.getWinkels() ?? [:]
         return winkels
     }
+ 
+    */
+ 
 
     static func haalReservatieOpVoorKlantMetEmail(_ email: String) -> [Reservatie] {
         var reservaties:[Reservatie] = []
@@ -45,6 +50,14 @@ class ReservationManager {
     static func haalSpringkasteelOp(naam: String) -> Springkasteel {
         let springkasteel = Springkasteel(rawValue: naam)
         return springkasteel!
+    }
+    
+    /* EXPERIMENTELE IMPLEMENTATIE MET REST */
+    
+    static func haalWinkelsOp() -> [Int:Winkel] {
+        let winkelsObjecten = RestService.sharedInstance.getWinkels()
+        let winkels:[Int:Winkel] = UtilityServices.utilServices.convertWinkelObjectToWinkelDict(input: winkelsObjecten)
+        return winkels
     }
 
     // Beslissen welk 1 van de functies die we gaan gebruiken

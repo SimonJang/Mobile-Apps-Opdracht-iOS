@@ -69,8 +69,8 @@ class ReserveerViewController: UIViewController {
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toonBevestiging", let destinationVC = segue.destination as? BevestigingViewController {
-            // TODO imlementeren
+        if segue.identifier == "toonBevestiging", let _ = segue.destination as? BevestigingViewController {
+            // TODO imlementeren indien nodig
         }
     }
  

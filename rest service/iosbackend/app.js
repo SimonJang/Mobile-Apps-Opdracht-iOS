@@ -6,6 +6,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var ip = require('ip');
 
 // Database intialiseren + Configureren van passport
 
@@ -16,6 +17,7 @@ require('./models/winkel');
 
 mongoose.connect('mongodb://localhost/springkasteel', function() {
   console.log('Mongoose connected. DB connection open');
+  console.log(ip.address())
 });
 
 

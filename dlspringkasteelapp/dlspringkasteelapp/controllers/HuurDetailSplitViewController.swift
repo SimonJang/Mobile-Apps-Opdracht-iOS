@@ -60,7 +60,7 @@ class HuurDetailSplitViewController: UIViewController {
                 .bold("Installeren geblazen\n")
                 .normal("Plooi het springkasteel open en blaas het op door de blazer (50 x 50 x 20 cm, gewicht = 5 kg) in het stopcontact te steken. En 5 minuten later staat je springkasteel recht!\n")
                 .bold("Opruimen in een oogwenk\n")
-                .normal("Plooi het springkasteel droog op tot een klein pakket. Opplooien doe je van buiten naar binnen.")
+                .normal("Plooi het springkasteel droog op tot een klein pakket. Opplooien doe je van buiten naar binnen.").endEditing()
             
             headerTxt.text = "Praktisch"
             mainTxt.attributedText = formattedString
@@ -70,6 +70,7 @@ class HuurDetailSplitViewController: UIViewController {
             formattedString
                 .bold("Legale Informatie\n")
                 .normal("Dreamland kan niet aansprakelijk worden gesteld voor gebeurlijke ongevallen")
+                .endEditing()
             headerTxt.text = "Voorwaarden"
             mainTxt.attributedText = formattedString
         }
