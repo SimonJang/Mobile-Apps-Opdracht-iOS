@@ -22,6 +22,7 @@
                     <connections>
                         <segue destination="CW8-77-WOa" kind="relationship" relationship="viewControllers" id="yPd-uH-gMS"/>
                         <segue destination="1CR-pg-4Fg" kind="relationship" relationship="viewControllers" id="jc9-d1-QGV"/>
+                        <segue destination="45d-yZ-CGB" kind="relationship" relationship="viewControllers" id="YsY-rB-0LT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKE-G0-scP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nd9-1o-Dtj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="-382.75862068965517"/>
+            <point key="canvasLocation" x="1185" y="-196"/>
         </scene>
         <!--Datum Selector View Controller-->
         <scene sceneID="K0B-8F-AUG">
@@ -210,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqI-vv-IiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421.5999999999999" y="-383.65817091454278"/>
+            <point key="canvasLocation" x="2137" y="-196"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="8kC-8k-RPJ">
@@ -225,7 +226,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uv0-JX-134" id="rIH-mU-u1s">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -239,7 +240,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Fd-3b-xCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2236" y="-384"/>
+            <point key="canvasLocation" x="3094" y="-196"/>
         </scene>
         <!--Overzicht Reservaties-->
         <scene sceneID="baY-qP-85e">
@@ -298,6 +299,126 @@
             </objects>
             <point key="canvasLocation" x="245.59999999999999" y="786.65667166416802"/>
         </scene>
+        <!--Voorwaarden-->
+        <scene sceneID="hkg-lF-YeU">
+            <objects>
+                <splitViewController id="45d-yZ-CGB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Voorwaarden" id="w0i-L8-uwf"/>
+                    <connections>
+                        <segue destination="JHL-7j-Ofd" kind="relationship" relationship="masterViewController" id="new-r1-NqV"/>
+                        <segue destination="m2f-re-Cxc" kind="relationship" relationship="detailViewController" id="bgv-Gq-hXS"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IgK-EY-Lg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-728" y="1834"/>
+        </scene>
+        <!--Huur Detail Split View Controller-->
+        <scene sceneID="CpG-xO-QjK">
+            <objects>
+                <viewController id="m2f-re-Cxc" customClass="HuurDetailSplitViewController" customModule="dlspringkasteelapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IoN-4Q-Qkm"/>
+                        <viewControllerLayoutGuide type="bottom" id="lCJ-hh-uAa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jw5-9W-ZGz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-QJ-WSX">
+                                <rect key="frame" x="-1" y="88" width="375" height="538"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titel van scherm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZ8-Wm-vYU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdo-tC-Txl">
+                                        <rect key="frame" x="0.0" y="34" width="375" height="504"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="rZ8-Wm-vYU" firstAttribute="width" secondItem="u1B-QJ-WSX" secondAttribute="width" id="hsK-QY-5mX"/>
+                                    <constraint firstItem="Vdo-tC-Txl" firstAttribute="leading" secondItem="u1B-QJ-WSX" secondAttribute="leading" id="wGK-Cu-ltO"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u1B-QJ-WSX" firstAttribute="width" secondItem="Jw5-9W-ZGz" secondAttribute="width" id="LX1-Ft-bT8"/>
+                            <constraint firstItem="lCJ-hh-uAa" firstAttribute="top" secondItem="u1B-QJ-WSX" secondAttribute="bottom" constant="8" symbolic="YES" id="bJz-B0-jSJ"/>
+                            <constraint firstItem="u1B-QJ-WSX" firstAttribute="centerX" secondItem="Jw5-9W-ZGz" secondAttribute="centerX" id="oY3-HX-4Ob"/>
+                            <constraint firstItem="u1B-QJ-WSX" firstAttribute="top" secondItem="IoN-4Q-Qkm" secondAttribute="bottom" constant="8" symbolic="YES" id="pof-Cy-3Oq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerTxt" destination="rZ8-Wm-vYU" id="hqp-8j-j3l"/>
+                        <outlet property="mainTxt" destination="Vdo-tC-Txl" id="8Kj-8D-YvE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oVo-39-DIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1184.8" y="2373.4632683658174"/>
+        </scene>
+        <!--Voorwaarden en informatie-->
+        <scene sceneID="NcX-W7-29P">
+            <objects>
+                <viewController id="SFh-sC-qfH" customClass="VoorwaardenViewController" customModule="dlspringkasteelapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6oV-GF-gvg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jwn-gk-X0Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i7f-tE-wzD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fz6-D2-iLy">
+                                <rect key="frame" x="0.0" y="93" width="375" height="82"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xt-hI-VzV">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Praktisch"/>
+                                        <connections>
+                                            <segue destination="m2f-re-Cxc" kind="show" identifier="showPraktisch" id="qvr-TA-yTX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TB-pu-P7l">
+                                        <rect key="frame" x="0.0" y="46" width="375" height="36"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Voorwaarden"/>
+                                        <connections>
+                                            <segue destination="m2f-re-Cxc" kind="show" identifier="showVoorwaarden" id="bk0-Vh-2qC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fz6-D2-iLy" firstAttribute="centerX" secondItem="i7f-tE-wzD" secondAttribute="centerX" id="1kw-hw-4KL"/>
+                            <constraint firstItem="fz6-D2-iLy" firstAttribute="width" secondItem="i7f-tE-wzD" secondAttribute="width" id="B10-yN-qWF"/>
+                            <constraint firstItem="fz6-D2-iLy" firstAttribute="top" secondItem="6oV-GF-gvg" secondAttribute="bottom" constant="29" id="fuR-OK-Lop"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Voorwaarden en informatie" id="mwP-j6-wyo">
+                        <barButtonItem key="backBarButtonItem" title="Meer informatie" id="3tf-bI-iFN"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFm-r8-34s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1184.8" y="1606.1469265367318"/>
+        </scene>
         <!--Reserveer springkasteel-->
         <scene sceneID="FYj-zi-tpt">
             <objects>
@@ -315,7 +436,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHK-ad-3ZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359.19999999999999" y="-382.75862068965517"/>
+            <point key="canvasLocation" x="246" y="-195"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="emc-yv-vhx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JHL-7j-Ofd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Sg-r5-AEc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SFh-sC-qfH" kind="relationship" relationship="rootViewController" id="k0b-pb-9Jy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTt-cC-e7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="1607"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qvr-TA-yTX"/>
+    </inferredMetricsTieBreakers>
 </document>
