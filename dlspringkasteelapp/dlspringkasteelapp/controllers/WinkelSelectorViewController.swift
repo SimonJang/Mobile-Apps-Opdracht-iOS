@@ -8,17 +8,44 @@
 
 import UIKit
 
-class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, DataModelDelegate {
 
     var winkels:[Int:Winkel] = [:]
+    private let dataModel = DataModel()
+    
     @IBOutlet weak var winkelPicker: UIPickerView!
     
+    
     override func viewDidLoad() {
-        winkels = ReservationManager.haalWinkelsOp()
+        super.viewDidLoad()
+        
+        dataModel.delegate = self
+        dataModel.requestWinkels()
+        
         winkelPicker.delegate = self
         winkelPicker.dataSource = self
-        super.viewDidLoad()
     }
+    
+    func vraagWinkels(data: [WinkelObject]) {
+        self.winkels = UtilityServices.utilServices.convertWinkelObjectToWinkelDict(input: data)
+        self.winkelPicker.reloadAllComponents()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        /*
+        DispatchQueue.global(qos: .userInteractive).async {
+            ReservationManager.fetchWinkels()
+           DispatchQueue.main.async {
+                self.winkels = ReservationManager.haalWinkelsOp()
+                self.winkelPicker.reloadAllComponents()
+                
+            }
+ 
+        }*/
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

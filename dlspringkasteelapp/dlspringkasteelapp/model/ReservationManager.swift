@@ -54,9 +54,13 @@ class ReservationManager {
     
     /* EXPERIMENTELE IMPLEMENTATIE MET REST */
     
+    static func fetchWinkels() {
+        RestService.sharedInstance.fetchWinkels()
+    }
+    
     static func haalWinkelsOp() -> [Int:Winkel] {
-        let winkelsObjecten = RestService.sharedInstance.getWinkels()
-        let winkels:[Int:Winkel] = UtilityServices.utilServices.convertWinkelObjectToWinkelDict(input: winkelsObjecten)
+        var winkelObjecten:[WinkelObject] = RestService.sharedInstance.getWinkels()!
+        let winkels:[Int:Winkel] = UtilityServices.utilServices.convertWinkelObjectToWinkelDict(input: winkelObjecten)
         return winkels
     }
 

@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dlspringkasteelapp/model/RestService.swift"
-            timestampString = "506637087.955083"
+            timestampString = "506645610.310724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "getWinkels()"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "requestWinkels()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,60 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dlspringkasteelapp/model/RestService.swift"
-            timestampString = "506637087.955083"
+            timestampString = "506645610.310724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "getWinkelsV2()"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "requestWinkels()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dlspringkasteelapp/model/RestService.swift"
-            timestampString = "506637087.955083"
+            timestampString = "506645610.310724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "getWinkelsV2()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dlspringkasteelapp/model/RestService.swift"
-            timestampString = "506637087.955083"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "getWinkelsV2()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dlspringkasteelapp/controllers/WinkelSelectorViewController.swift"
-            timestampString = "506637317.813424"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "requestWinkels()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

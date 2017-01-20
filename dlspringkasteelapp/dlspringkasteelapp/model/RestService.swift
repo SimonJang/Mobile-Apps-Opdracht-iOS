@@ -7,6 +7,7 @@
 //      https://github.com/Alamofire/Alamofire voorbeelden
 //      https://github.com/SwiftyJSON/SwiftyJSON voorbeelden
 //      https://grokswift.com/rest-with-alamofire-swiftyjson/ voorbeelden
+//      https://medium.com/ios-os-x-development/ios-three-ways-to-pass-data-from-model-to-controller-b47cc72a4336#.ldllm277d voor delegation
 //
 //  Deze klasse haalt de data op van een REST service
 
@@ -23,7 +24,7 @@ class RestService {
     var returnWinkels:[WinkelObject] = []
     
     
-    func getWinkelsV2()  {
+    func fetchWinkels()  {
 
         //let configuration = URLSessionConfiguration.default
         //configuration.urlCache = nil
@@ -49,24 +50,6 @@ class RestService {
     
     
     func getWinkels() -> [WinkelObject]? {
-        
-        getWinkelsV2()
-        
-        var returnArr:[WinkelObject]? = nil
-        
-        /*
-        
-        
-        
-        let json = JSON(Alamofire.request("http://localhost:3000/api/winkels"))
-        print(json)
-        for (_, object) in json {
-            let winkel = WinkelObject(object)
-            returnArr?.append(winkel)
-        }
-        
-        */
-        
         return self.returnWinkels
     }
  
@@ -197,6 +180,34 @@ class ReservatieObject {
         datum = dateFormatter.date(from:dateString)
         type = Springkasteel(rawValue: json["type"].stringValue)
         winkelNaam = json["winkel"].stringValue
+    }
+}
+
+protocol DataModelDelegate: class {
+    func vraagWinkels(data: [WinkelObject])
+}
+
+class DataModel {
+    weak var delegate: DataModelDelegate?
+    
+    func requestWinkels() {
+        Alamofire.request("http://localhost:3000/api/winkels").responseJSON(completionHandler:  {
+            response in
+            print(response)
+            guard let result = response.result.value as? AnyObject else {
+                print("Something went wrong with GET REQUEST to http://localhost:3000/api/winkels")
+                print("Error: \(response.result.error)")
+                return
+            }
+            var winkels:[WinkelObject] = []
+            let json = JSON(result)
+            for(_, object) in json {
+                let winkel = WinkelObject(object)
+                winkels.append(winkel)
+            }
+            self.delegate?.vraagWinkels(data: winkels)
+        })
+        
     }
 }
 
