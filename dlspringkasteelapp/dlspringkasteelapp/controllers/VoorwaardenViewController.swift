@@ -18,17 +18,26 @@ class VoorwaardenViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch(identifier) {
+                case "showPraktisch":
+                    let destination = segue.destination as? HuurDetailSplitViewController
+                    destination?.praktischValue = true
+                case "showVoorwaarden":
+                    if let split = self.splitViewController {
+                        let controllers = split.viewControllers
+                        let detailViewController = controllers[controllers.count - 1] as? HuurDetailSplitViewController
+                        detailViewController?.praktischValue = false
+                    }
+                    let destination = segue.destination as? HuurDetailSplitViewController
+                    destination?.voorwaardenValue = true
+                default:
+                break
+            }
+        }
     }
-    */
+ 
 
 }

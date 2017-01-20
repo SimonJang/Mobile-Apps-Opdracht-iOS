@@ -226,7 +226,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uv0-JX-134" id="rIH-mU-u1s">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -252,7 +252,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="labelCel" textLabel="uKg-0W-sct" style="IBUITableViewCellStyleDefault" id="l1t-1M-QbV">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1t-1M-QbV" id="sIM-vy-e4t">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -325,8 +325,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-QJ-WSX">
-                                <rect key="frame" x="-1" y="88" width="375" height="538"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-QJ-WSX">
+                                <rect key="frame" x="0.0" y="72" width="375" height="538"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titel van scherm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZ8-Wm-vYU">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
@@ -388,7 +388,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Praktisch"/>
                                         <connections>
-                                            <segue destination="m2f-re-Cxc" kind="show" identifier="showPraktisch" id="qvr-TA-yTX"/>
+                                            <segue destination="m2f-re-Cxc" kind="showDetail" identifier="showPraktisch" action="showViewController:sender:" id="qvr-TA-yTX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TB-pu-P7l">
@@ -398,7 +398,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Voorwaarden"/>
                                         <connections>
-                                            <segue destination="m2f-re-Cxc" kind="show" identifier="showVoorwaarden" id="bk0-Vh-2qC"/>
+                                            <segue destination="m2f-re-Cxc" kind="showDetail" identifier="showVoorwaarden" action="showViewController:sender:" id="bk0-Vh-2qC"/>
                                         </connections>
                                     </button>
                                 </subviews>
