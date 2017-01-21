@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+var moment = require('moment');
+var async = require('async');
 
 var Reservaties = mongoose.model('Reservatie');
 var Winkels = mongoose.model('Winkel');
@@ -31,8 +33,28 @@ router.get('/api/reservaties/:id', function(req, res) {
   })
 });
 
-router.get('/api/winkels/:id', function(req, res) {
-  
+router.post('/api/winkels', function(req, res, next) {
+  var datumRes = req.body.datum;
+  var winkelid = req.body.winkel.toString();
+
+  Reservaties.find({"storeID": winkelid, "datum": datumRes},{ springkasteel: 1, _id: 0}, function(err, resses) {
+      res.json(resses)
+  });
+
+});
+
+router.post('/api/reservatie', function(req, res) {
+  var hashedmail = crypto.createHash('md5').update(req.body.email).digest('hex');
+  var email = req.body.email;
+  var datum = req.body.datum;
+  var storeID = req.body.storeID;
+  var termijn = 1;
+  var springkasteel = req.body.springkasteel
+
+  Reservaties.insert({"hash": hashedmail, "datum": datum, "email": email, "storeID": storeID, "termijn" :termijn.toString(),
+  "springkasteel": springkasteel}, function() {
+    res.json({"confirmation": "ok"})
+  });
 });
 
 module.exports = router;
