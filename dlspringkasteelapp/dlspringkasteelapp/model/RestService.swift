@@ -23,83 +23,6 @@ class RestService {
     var sessionManager: SessionManager!
     var returnWinkels:[WinkelObject] = []
  
-    
-    func getSpringkastelenForDate(winkelId: Int, datum:Date) -> [Springkasteel: Int]? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-        let stringDate = dateFormatter.string(from: datum)
-        
-        var returnDict:[Springkasteel:Int] = [:]
-        
-        let endPoint = "http://localhost:3000/api/winkels"
-        let post:[String:Any] = ["winkelID":String(winkelId), "datum":stringDate]
-        
-        let json = JSON(Alamofire.request(endPoint, method: .post, parameters: post, encoding: JSONEncoding.default))
-        for(_, object) in json {
-            switch(object) {
-            case object["JUNGLE"]:
-                returnDict[.JUNGLE] = object["JUNGLE"].intValue
-            
-            case object["PIRAAT"]:
-                returnDict[.PIRAAT] = object["PIRAAT"].intValue
-            
-            case object["JUMP"]:
-                returnDict[.JUMP] = object["JUMP"].intValue
-                
-            case object["CIRCUS"]:
-                returnDict[.CIRCUS] = object["CIRCUS"].intValue
-                
-            default:
-                break
-        
-            }
-        }
-        return returnDict
-    }
-    
-    /*
-    
-    func maakReservatie (reservatie: Reservatie) -> Bool {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-        
-        let endPoint = "http://localhost:3000/api/winkels/reservatie"
-        var confirmation:Bool = false
-        
-        let email = reservatie.klant.email
-        let datumString = dateFormatter.string(from:reservatie.datum)
-        
-        let post:[String:Any] =
-            ["winkel": String(reservatie.store.storeId),
-             "type": String(describing: reservatie.springkasteel),
-             "email": email,
-             "datum": datumString]
-        
-        let json = JSON(Alamofire.request(endPoint, method: .post, parameters: post, encoding: JSONEncoding.default))
-        for (_, object) in json {
-            confirmation = object["confirmation"].boolValue
-        }
-        
-        return confirmation
-    }
-    
-    func zoekReservaties(email:String) -> [ReservatieObject]? {
-        let hashed = UtilityServices.utilServices.MD5(string: email)
-        let endPoint = "http://localhost:3000/api/reservaties/\(hashed)"
-        var reservatiesArr:[ReservatieObject]? = nil
-        
-        let json = JSON(Alamofire.request(endPoint))
-        for(_, object) in json {
-            reservatiesArr?.append(ReservatieObject(object))
-        }
-        
-        return reservatiesArr
-        
-    }
-     
-     */
 }
 
 class WinkelObject {
@@ -222,7 +145,9 @@ class DataModelBeschikbareSpringkastelen {
             print(response)
             let result = response.result.value as AnyObject
             let json = JSON(result)
-            ReservationManager.geselecteerdeWinkel = UtilityServices.utilServices.analyseerBeschikbaarheid(vanWinkel: &ReservationManager.geselecteerdeWinkel!, metJSON: json)
+            //temp testing
+            let eenWinkel = ReservationManager.geselecteerdeWinkel!
+            ReservationManager.geselecteerdeWinkelMetAangepasteSpringkastelen = UtilityServices.utilServices.analyseerBeschikbaarheid(vanWinkel: eenWinkel, metJSON: json)
             
             self.delegate?.beschikbaarheidControlerenVoltooid()
         })

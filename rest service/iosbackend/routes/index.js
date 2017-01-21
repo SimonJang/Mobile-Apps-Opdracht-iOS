@@ -53,7 +53,7 @@ router.post('/api/reservatie', function(req, res) {
   var email = req.body.email;
   var datum = req.body.datum;
   var storeID = req.body.storeID;
-  var termijn = 1;
+  var termijn = "1";
   var springkasteel = req.body.springkasteel;
 
   var reservatie = new Reservaties();
@@ -62,7 +62,7 @@ router.post('/api/reservatie', function(req, res) {
   reservatie.email = email;
   reservatie.storeID = storeID;
   reservatie.springkasteel = springkasteel;
-  reservatie.termijn = "1";
+  reservatie.termijn = termijn
 
   reservatie.save(function(err) {
     if(err) { return res.status(400).json({message:"Er is iets fout gelopen in de backend"})}

@@ -82,9 +82,9 @@ class ReserveerViewController: UIViewController, DataModelRegistreerReservatieDe
                         let stringDate = UtilityServices.utilServices.convertDatumNaarString(datum: ReservationManager.geselecteerdeDatum!)
                         
                         let nieuweReservatie = Reservatie(klant: input,
-                                                    gewenstSpringkasteel: springkasteel,
+                                                    gewenstSpringkasteel: stelSpringKasteelIn,
                                                     datum: stringDate,
-                                                    afhaalwinkel: String(ReservationManager.geselecteerdeWinkel!.storeId),
+                                                    afhaalwinkel: String(ReservationManager.geselecteerdeWinkelMetAangepasteSpringkastelen!.storeId),
                                                     termijn: 1)
                         dataModelReserveren.registreer(reservatie: nieuweReservatie)
                         return false

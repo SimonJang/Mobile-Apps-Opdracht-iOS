@@ -4,7 +4,7 @@ import UIKit
 
 class SpringKasteelTableViewController: UITableViewController {
     
-    var geselecteerdeWinkel = ReservationManager.geselecteerdeWinkel
+    var geselecteerdeWinkel = ReservationManager.geselecteerdeWinkelMetAangepasteSpringkastelen
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return geselecteerdeWinkel?.storeName

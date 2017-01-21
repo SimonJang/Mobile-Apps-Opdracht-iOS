@@ -15,27 +15,11 @@ class ReservationManager {
     static var tempData:DummyData = DummyData()
     static var huidigeGebruiker: String = ""
     static var geselecteerdeWinkel: Winkel? = nil
+    static var geselecteerdeWinkelMetAangepasteSpringkastelen:Winkel? = nil
     static var geselecteerdeDatum: Date? = nil
     static var emailKlant: String = ""
     static var reservaties:[Reservatie] = []
     static var geselecteerdeSpringkasteel: Springkasteel?
-    
-    /* WERKENDE IMPLEMENTATIE MET TEMPDATA*/
-    /*
-    func maakReservatie(klantVoorReservatie: Klant,springkasteel: Springkasteel, winkel: Winkel, date:Date) -> Bool {
-        let nieuweReservatie = Reservatie(klant:klantVoorReservatie, gewenstSpringkasteel: springkasteel, datum: date, afhaalwinkel: winkel, termijn: 1)
-        let confirmation = RestService.sharedInstance.maakReservatie(reservatie: nieuweReservatie)
-        return confirmation
-    }
-    */
-    /*
-    static func haalWinkelsOp() -> [Int:Winkel] {
-        var winkels:[Int:Winkel] = [:]
-        winkels = tempData.getWinkels() ?? [:]
-        return winkels
-    }
- 
-    */
  
 
     static func haalReservatieOpVoorKlantMetEmail(_ email: String) -> [Reservatie] {

@@ -64,22 +64,27 @@ class UtilityServices {
     
     // Functie kijkt welke springkastelen er allemaal beschikbaar zijn in bepaalde winkel op basis van json input
 
-    func analyseerBeschikbaarheid(vanWinkel: inout Winkel, metJSON: JSON) -> Winkel {
+    func analyseerBeschikbaarheid(vanWinkel: Winkel, metJSON: JSON) -> Winkel {
+        let gefilterdeWinkel = Winkel(storeID: vanWinkel.storeId, storeNAME: vanWinkel.storeName)
+        gefilterdeWinkel.CIRCUS = Int(vanWinkel.CIRCUS)
+        gefilterdeWinkel.PIRAAT = Int(vanWinkel.PIRAAT)
+        gefilterdeWinkel.JUMP = Int(vanWinkel.JUMP)
+        gefilterdeWinkel.JUNGLE = Int(vanWinkel.JUNGLE)
         for(_, object) in metJSON {
-            let type = object["springkasteel"]
+            let type = object["springkasteel"].stringValue
             switch(type) {
                 case "jungle":
-                    vanWinkel.JUNGLE = vanWinkel.JUNGLE - 1
+                    gefilterdeWinkel.JUNGLE = gefilterdeWinkel.JUNGLE - 1
                 case "piraat":
-                    vanWinkel.PIRAAT = vanWinkel.PIRAAT - 1
+                    gefilterdeWinkel.PIRAAT = gefilterdeWinkel.PIRAAT - 1
                 case "circus":
-                    vanWinkel.CIRCUS = vanWinkel.CIRCUS - 1
+                    gefilterdeWinkel.CIRCUS = gefilterdeWinkel.CIRCUS - 1
                 case "jump":
-                    vanWinkel.JUMP = vanWinkel.JUMP - 1
+                    gefilterdeWinkel.JUMP = gefilterdeWinkel.JUMP - 1
             default: break
             }
         }
-        return vanWinkel
+        return gefilterdeWinkel
     }
     
     func convertDatumNaarString(datum:Date) -> String {
