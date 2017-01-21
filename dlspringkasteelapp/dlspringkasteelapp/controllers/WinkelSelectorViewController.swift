@@ -87,6 +87,7 @@ class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPi
         if ReservationManager.geselecteerdeWinkel == nil {
             let keys = Array(winkels.keys)
             if let winkel = winkels[keys[0]] {
+                ReservationManager.springkastelen = UtilityServices.utilServices.bepaalAantalSpringkastelenVan(winkel: winkel)
                 ReservationManager.geselecteerdeWinkel = winkel
             }
         }

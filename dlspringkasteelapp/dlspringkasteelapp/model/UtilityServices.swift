@@ -10,6 +10,7 @@
  */
 
 import Foundation
+import SwiftyJSON
 
 class UtilityServices {
     static let utilServices = UtilityServices()
@@ -40,7 +41,12 @@ class UtilityServices {
         
         if input != nil {
             for winkelObj in input! {
-                returnDict[Int(winkelObj.storeID)!] = Winkel(storeID: Int(winkelObj.storeID)!, storeNAME: winkelObj.naam)
+                let winkel = Winkel(storeID: Int(winkelObj.storeID)!, storeNAME: winkelObj.naam)
+                winkel.CIRCUS = winkelObj.CIRCUS
+                winkel.JUMP = winkelObj.JUMP
+                winkel.PIRAAT = winkelObj.PIRAAT
+                winkel.JUNGLE = winkelObj.JUNGLE
+                returnDict[Int(winkelObj.storeID)!] = winkel
             }
         }
         
@@ -54,6 +60,20 @@ class UtilityServices {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
+    }
+    
+    func bepaalAantalSpringkastelenVan(winkel:Winkel) -> [Springkasteel:Int] {
+        var springkastelenassortiment:[Springkasteel:Int] = [:]
+        springkastelenassortiment[Springkasteel.JUNGLE] = winkel.JUNGLE
+        springkastelenassortiment[Springkasteel.PIRAAT] = winkel.PIRAAT
+        springkastelenassortiment[Springkasteel.CIRCUS] = winkel.CIRCUS
+        springkastelenassortiment[Springkasteel.JUMP] = winkel.JUMP
+        print(springkastelenassortiment)
+        return springkastelenassortiment
+    }
+    
+    func analyseerBeschikbaarheid(json: JSON) -> [Springkasteel:Int]{
+        return [:]
     }
     
 }

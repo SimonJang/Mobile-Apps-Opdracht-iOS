@@ -6,10 +6,10 @@
 
 import Foundation
 enum Springkasteel:String {
-    case JUNGLE = "Jungle"
-    case PIRAAT = "Piraat"
-    case CIRCUS = "Circus"
-    case JUMP = "Jump 'o Line"
+    case JUNGLE = "jungle"
+    case PIRAAT = "piraat"
+    case CIRCUS = "circus"
+    case JUMP = "jump"
 }
 
 

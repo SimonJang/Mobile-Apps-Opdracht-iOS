@@ -207,3 +207,29 @@ class DataModelReservatieOpvragenKlant {
     }
 }
 
+// Controleren van beschikbaarheid van springkasteel
+
+protocol DataModelBeschikbareSpringkastelenDelegate: class {
+    func beschikbaarheidControleren(data:[Springkasteel:Int])
+}
+
+class DataModelBeschikbareSpringkastelen {
+    weak var delegate:DataModelBeschikbareSpringkastelenDelegate?
+    
+    func beschikbaarheidVoor(datum:String, inwinkel: String) {
+        
+        let post:[String:Any] = ["winkelID": inwinkel, "datum":datum]
+        let endPoint = "http://localhost:3000/api/winkels"
+
+        Alamofire.request(endPoint, method: .post, parameters: post, encoding: JSONEncoding.default).responseJSON(completionHandler: {
+            response in
+            print(response)
+            let result = response.result.value as AnyObject
+            let json = JSON(result)
+            // TODO verder aan werken
+        })
+    }
+}
+
+
+
