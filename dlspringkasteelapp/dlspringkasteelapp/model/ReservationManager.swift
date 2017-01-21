@@ -18,6 +18,7 @@ class ReservationManager {
     static var geselecteerdeDatum: Date? = nil
     static var emailKlant: String = ""
     static var reservaties:[Reservatie] = []
+    static var geselecteerdeSpringkasteel: Springkasteel?
     
     /* WERKENDE IMPLEMENTATIE MET TEMPDATA*/
     /*

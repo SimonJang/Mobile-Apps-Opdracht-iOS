@@ -1,7 +1,4 @@
-//
 //  SpringKasteelTableViewController.swift
-//  dlspringkasteelapp
-
 
 import UIKit
 
@@ -15,13 +12,6 @@ class SpringKasteelTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +52,22 @@ class SpringKasteelTableViewController: UITableViewController {
         if segue.identifier == "geefKlantGegevens", let destinationVC = segue.destination as? ReserveerViewController {
             if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
                 let selectedIndex = indexPath.row
-                destinationVC.springkasteel = "Jungle"
+                switch(selectedIndex) {
+                case 0:
+                    destinationVC.springkasteel = "jungle"
+                    ReservationManager.geselecteerdeSpringkasteel = Springkasteel.JUNGLE
+                case 1:
+                    destinationVC.springkasteel = "piraat"
+                    ReservationManager.geselecteerdeSpringkasteel = Springkasteel.PIRAAT
+                case 2:
+                    destinationVC.springkasteel = "circus"
+                    ReservationManager.geselecteerdeSpringkasteel = Springkasteel.CIRCUS
+                case 3:
+                    destinationVC.stelSpringKasteelIn = "jump"
+                    ReservationManager.geselecteerdeSpringkasteel = Springkasteel.JUMP
+                default:
+                    break;
+                }
             }
         }
         

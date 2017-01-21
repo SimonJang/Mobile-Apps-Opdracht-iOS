@@ -17,6 +17,20 @@ class ReserveerViewController: UIViewController {
     @IBOutlet weak var warningEmptyMail: UILabel!
     
     var springkasteel:String = ""
+    
+    var stelSpringKasteelIn:String {
+        set(geselecteerdSpringKasteel) {
+            if !(geselecteerdSpringKasteel == "jump") {
+                springkasteel = geselecteerdSpringKasteel
+            }
+            else {
+                springkasteel = "Jump 'o Line"
+            }
+        }
+        get {
+            return springkasteel
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +44,7 @@ class ReserveerViewController: UIViewController {
     }
     
     private func fillOutlets() {
-        titelLabel.text = "Reservatie \(springkasteel)"
+        titelLabel.text = "Reservatie \(springkasteel.capitalized)"
         winkelLabel.text = "Gereserveerd in \(ReservationManager.geselecteerdeWinkel!.storeName)"
         
         if let datum = ReservationManager.geselecteerdeDatum {
