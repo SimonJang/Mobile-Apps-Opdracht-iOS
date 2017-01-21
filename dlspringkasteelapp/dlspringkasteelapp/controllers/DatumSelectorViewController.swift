@@ -37,7 +37,7 @@ class DatumSelectorViewController: UIViewController {
         datePicker.maximumDate = maxDate
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination
+        _ = segue.destination
         if let identifier = segue.identifier {
             switch(identifier) {
             case "toonSpringkastelen":

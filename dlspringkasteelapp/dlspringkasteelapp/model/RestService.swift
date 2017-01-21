@@ -22,37 +22,6 @@ class RestService {
     static let sharedInstance = RestService()
     var sessionManager: SessionManager!
     var returnWinkels:[WinkelObject] = []
-    
-    
-    func fetchWinkels()  {
-
-        //let configuration = URLSessionConfiguration.default
-        //configuration.urlCache = nil
-        //let sessionManager = Alamofire.SessionManager(configuration: configuration)
-        
-        Alamofire.request("http://localhost:3000/api/winkels").responseJSON(completionHandler:  {
-            response in
-            print(response)
-            guard let result = response.result.value as? AnyObject else {
-                print("Something went wrong with GET REQUEST to http://localhost:3000/api/winkels")
-                print("Error: \(response.result.error)")
-                return
-            }
-            var winkels:[WinkelObject] = []
-            let json = JSON(result)
-            for(_, object) in json {
-                let winkel = WinkelObject(object)
-                winkels.append(winkel)
-            }
-            self.returnWinkels = winkels
-            })
-    }
-    
-    
-    func getWinkels() -> [WinkelObject]? {
-        return self.returnWinkels
-    }
- 
  
     
     func getSpringkastelenForDate(winkelId: Int, datum:Date) -> [Springkasteel: Int]? {
@@ -183,16 +152,17 @@ class ReservatieObject {
     }
 }
 
-protocol DataModelDelegate: class {
+protocol DataModelWinkelDelegate: class {
     func vraagWinkels(data: [WinkelObject])
 }
 
-class DataModel {
-    weak var delegate: DataModelDelegate?
+class DataModelWinkel {
+    weak var delegate: DataModelWinkelDelegate?
     
     func requestWinkels() {
         Alamofire.request("http://localhost:3000/api/winkels").responseJSON(completionHandler:  {
             response in
+            /* Controleeert de call in console */
             print(response)
             guard let result = response.result.value as? AnyObject else {
                 print("Something went wrong with GET REQUEST to http://localhost:3000/api/winkels")

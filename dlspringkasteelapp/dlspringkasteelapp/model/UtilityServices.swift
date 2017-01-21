@@ -5,7 +5,8 @@
 
 
 /*
-  Klasse voor verschillende conversies toe te passen van/naar verschillende objecten (date,
+  Klasse voor verschillende conversies toe te passen van/naar verschillende objecten
+  Hashing dient hier voor GET voor de reservaties op te halen van de klant, email wordt gehashed en GET parameter
  */
 
 import Foundation
@@ -13,27 +14,24 @@ import Foundation
 class UtilityServices {
     static let utilServices = UtilityServices()
     
+    // http://stackoverflow.com/questions/32163848/how-to-convert-string-to-md5-hash-using-ios-swift
     
-    // Hash functie voor verbergen van email adres in GET request
-    // zie http://stackoverflow.com/questions/39400495/md5-of-data-in-swift-3
-    // en http://stackoverflow.com/questions/24123518/how-to-use-cc-md5-method-in-swift-language
-    
-    func md5(string: String) -> String {
-        var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
-        if let data = string.data(using: String.Encoding.utf8) {
-            CC_MD5(data.withUnsafeBytes { bytes in
-                CC_MD5(bytes, CC_LONG(data.count), &digest)
-            }, CC_LONG(data.count), &digest)
+    func MD5(string: String) -> String? {
+        guard let messageData = string.data(using:String.Encoding.utf8) else { return nil }
+        var digestData = Data(count: Int(CC_MD5_DIGEST_LENGTH))
+        
+        _ = digestData.withUnsafeMutableBytes {digestBytes in
+            messageData.withUnsafeBytes {messageBytes in
+                CC_MD5(messageBytes, CC_LONG(messageData.count), digestBytes)
+            }
         }
         
-        var returnString = ""
+        let MD5HashedString =  digestData.map { String(format: "%02hhx", $0) }.joined()
         
-        for x in digest {
-            returnString += String(x)
-        }
-        
-        return returnString
+        return MD5HashedString
     }
+
+    
     
     func convertWinkelObjectToWinkelDict(input:[WinkelObject]?) -> [Int:Winkel] {
         var returnDict:[Int:Winkel] = [:]

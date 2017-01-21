@@ -8,22 +8,20 @@
 
 import UIKit
 
-class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, DataModelDelegate {
+class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, DataModelWinkelDelegate {
 
     var winkels:[Int:Winkel] = [:]
-    private let dataModel = DataModel()
+    private let dataModelWinkel = DataModelWinkel()
     
     @IBOutlet weak var winkelPicker: UIPickerView!
     
     
     override func viewDidLoad() {
         
-        
-        
         super.viewDidLoad()
         
-        dataModel.delegate = self
-        dataModel.requestWinkels()
+        dataModelWinkel.delegate = self
+        dataModelWinkel.requestWinkels()
         
         winkelPicker.delegate = self
         winkelPicker.dataSource = self

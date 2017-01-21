@@ -51,18 +51,6 @@ class ReservationManager {
         let springkasteel = Springkasteel(rawValue: naam)
         return springkasteel!
     }
-    
-    /* EXPERIMENTELE IMPLEMENTATIE MET REST */
-    
-    static func fetchWinkels() {
-        RestService.sharedInstance.fetchWinkels()
-    }
-    
-    static func haalWinkelsOp() -> [Int:Winkel] {
-        var winkelObjecten:[WinkelObject] = RestService.sharedInstance.getWinkels()!
-        let winkels:[Int:Winkel] = UtilityServices.utilServices.convertWinkelObjectToWinkelDict(input: winkelObjecten)
-        return winkels
-    }
 
     // Beslissen welk 1 van de functies die we gaan gebruiken
     /*

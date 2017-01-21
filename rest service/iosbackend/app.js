@@ -2,7 +2,7 @@
 
 var express = require('express');
 var path = require('path');
-var cryptojs = require('crypto-js');
+var crypto = require('crypto');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -16,10 +16,15 @@ var mongoose = require('mongoose');
 require('./models/reservatie');
 require('./models/winkel');
 
+
+
 mongoose.connect('mongodb://localhost/springkasteel', function() {
   console.log('Mongoose connected. DB connection open');
-  console.log(ip.address())
-  //console.log(cryptojs.md5("test123").toString())
+  console.log(ip.address());
+
+  var email = "simon@test.be"
+  var hash = crypto.createHash('md5').update(email).digest('hex');
+  console.log(hash)
 });
 
 
