@@ -82,6 +82,20 @@ class UtilityServices {
         return vanWinkel
     }
     
+    func convertDatumNaarString(datum:Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        let stringDate = dateFormatter.string(from: datum)
+        return stringDate
+    }
     
+    func convertStringNaarDatum(stringDatum:String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        let someDate = dateFormatter.date(from: stringDatum)
+        return someDate!
+    }
     
 }

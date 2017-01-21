@@ -1,14 +1,9 @@
-//
+
 //  ReserveerViewController.swift
-//  dlspringkasteelapp
-//
-//  Created by Simon Jang on 20/01/17.
-//  Copyright © 2017 Simon Jang. All rights reserved.
-//
 
 import UIKit
 
-class ReserveerViewController: UIViewController {
+class ReserveerViewController: UIViewController, DataModelRegistreerReservatieDelegate {
     
     @IBOutlet weak var titelLabel: UILabel!
     @IBOutlet weak var winkelLabel: UILabel!
@@ -16,6 +11,7 @@ class ReserveerViewController: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var warningEmptyMail: UILabel!
     
+    private let dataModelReserveren = DataModelRegistreerReservatie()
     var springkasteel:String = ""
     
     var stelSpringKasteelIn:String {
@@ -28,19 +24,32 @@ class ReserveerViewController: UIViewController {
             }
         }
         get {
+            if springkasteel == "Jump 'o Line" {
+                return "jump"
+            }
             return springkasteel
         }
+    }
+    
+    func reservatieVoltooid() {
+        self.performSegue(withIdentifier: "toonBevestiging", sender: "Registratie voltooid")
+    }
+    
+    func reservatieFailure() {
+        warningEmptyMail.isHidden = false;
+        warningEmptyMail.text = "Reservatie mislukt. Probeer opnieuw"
+        emailTxt.text = ""
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dataModelReserveren.delegate = self
         fillOutlets()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     private func fillOutlets() {
@@ -62,16 +71,28 @@ class ReserveerViewController: UIViewController {
         switch(identifier) {
             case "toonBevestiging":
                 if let input = emailTxt.text {
-                    if UtilityServices.utilServices.validateEmail(email: input) {
+                    if !UtilityServices.utilServices.validateEmail(email: input) {
+                        warningEmptyMail.isHidden = false
+                        warningEmptyMail.text = "Ongelding email adres"
+                        emailTxt.text = ""
                         return false
                     }
                     else {
                         ReservationManager.emailKlant = input
-                        return true
+                        let stringDate = UtilityServices.utilServices.convertDatumNaarString(datum: ReservationManager.geselecteerdeDatum!)
+                        
+                        let nieuweReservatie = Reservatie(klant: input,
+                                                    gewenstSpringkasteel: springkasteel,
+                                                    datum: stringDate,
+                                                    afhaalwinkel: String(ReservationManager.geselecteerdeWinkel!.storeId),
+                                                    termijn: 1)
+                        dataModelReserveren.registreer(reservatie: nieuweReservatie)
+                        return false
                     }
                 }
             default:
-                return true
+                reservatieFailure()
+                return false
         }
         return false
     }
@@ -79,7 +100,7 @@ class ReserveerViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toonBevestiging", let _ = segue.destination as? BevestigingViewController {
-            // TODO imlementeren indien nodig
+            // Niet nodig?
         }
     }
  

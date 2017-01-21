@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var moment = require('moment');
 var async = require('async');
+var crypto = require('crypto');
 
 var Reservaties = mongoose.model('Reservatie');
 var Winkels = mongoose.model('Winkel');
@@ -44,17 +45,29 @@ router.post('/api/winkels', function(req, res, next) {
 });
 
 router.post('/api/reservatie', function(req, res) {
+  if(!req.body.email || !req.body.datum) {
+    return res.status(400).json({message:'Noodzakelijke velden ontbreken'})
+  }
+
   var hashedmail = crypto.createHash('md5').update(req.body.email).digest('hex');
   var email = req.body.email;
   var datum = req.body.datum;
   var storeID = req.body.storeID;
   var termijn = 1;
-  var springkasteel = req.body.springkasteel
+  var springkasteel = req.body.springkasteel;
 
-  Reservaties.insert({"hash": hashedmail, "datum": datum, "email": email, "storeID": storeID, "termijn" :termijn.toString(),
-  "springkasteel": springkasteel}, function() {
+  var reservatie = new Reservaties();
+  reservatie.hash = hashedmail;
+  reservatie.datum = datum;
+  reservatie.email = email;
+  reservatie.storeID = storeID;
+  reservatie.springkasteel = springkasteel;
+  reservatie.termijn = "1";
+
+  reservatie.save(function(err) {
+    if(err) { return res.status(400).json({message:"Er is iets fout gelopen in de backend"})}
     res.json({"confirmation": "ok"})
-  });
+  })
 });
 
 module.exports = router;

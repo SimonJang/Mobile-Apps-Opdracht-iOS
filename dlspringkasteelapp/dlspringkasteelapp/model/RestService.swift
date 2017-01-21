@@ -158,11 +158,7 @@ class DataModelWinkel {
             response in
             /* Controleer de call in console */
             print(response)
-            guard let result = response.result.value as? AnyObject else {
-                print("Something went wrong with GET REQUEST to http://localhost:3000/api/winkels")
-                print("Error: \(response.result.error)")
-                return
-            }
+            let result = response.result.value as AnyObject
             var winkels:[WinkelObject] = []
             let json = JSON(result)
             for(_, object) in json {
@@ -229,6 +225,38 @@ class DataModelBeschikbareSpringkastelen {
             ReservationManager.geselecteerdeWinkel = UtilityServices.utilServices.analyseerBeschikbaarheid(vanWinkel: &ReservationManager.geselecteerdeWinkel!, metJSON: json)
             
             self.delegate?.beschikbaarheidControlerenVoltooid()
+        })
+    }
+}
+
+// POSTen van reservatie naar backend
+
+protocol DataModelRegistreerReservatieDelegate: class {
+    func reservatieVoltooid()
+    func reservatieFailure()
+}
+
+class DataModelRegistreerReservatie {
+    weak var delegate:DataModelRegistreerReservatieDelegate?
+    
+    func registreer(reservatie: Reservatie) {
+        let post:[String:Any] = ["email": reservatie.klantEmail,
+                                 "datum": reservatie.datum,
+                                 "storeID": reservatie.store,
+                                 "springkasteel": reservatie.springkasteel]
+        let endPoint = "http://localhost:3000/api/reservatie"
+        
+        Alamofire.request(endPoint, method: .post, parameters: post, encoding: JSONEncoding.default).responseJSON(completionHandler: {
+            response in
+            print(response)
+            let result = response.result.value as AnyObject
+            let json = JSON(result)
+            if json["confirmation"] == "ok" {
+                self.delegate?.reservatieVoltooid()
+            }
+            else {
+                self.delegate?.reservatieFailure()
+            }
         })
     }
 }
