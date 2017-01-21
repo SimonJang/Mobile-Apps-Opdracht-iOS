@@ -43,17 +43,12 @@ class ReserveerViewController: UIViewController {
         
     }
     
-    // Gebruik van regex voor validatie
-    // http://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift
-    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         
         switch(identifier) {
             case "toonBevestiging":
                 if let input = emailTxt.text {
-                    if !emailTest.evaluate(with: input) {
+                    if UtilityServices.utilServices.validateEmail(email: input) {
                         return false
                     }
                     else {

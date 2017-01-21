@@ -60,7 +60,7 @@ class ReservatieTableViewController: UITableViewController {
             cell.textLabel?.text = String(describing: data[indexPath.section].datum)
         }
         else if indexPath.row == 1  {
-            cell.textLabel?.text = "\(data[indexPath.section].klant.firstName) \(data[indexPath.section].klant.lastName)"
+            cell.textLabel?.text = "\(data[indexPath.section].klantEmail)"
         }
         else if indexPath.row == 2 {
             cell.textLabel?.text = String(describing: data[indexPath.section].prijs)
@@ -69,7 +69,7 @@ class ReservatieTableViewController: UITableViewController {
             cell.textLabel?.text = String(describing: data[indexPath.section].springkasteel)
         }
         else if indexPath.row == 4 {
-            cell.textLabel?.text = data[indexPath.section].store.storeName
+            cell.textLabel?.text = data[indexPath.section].store
         }
         else if indexPath.row == 5 {
             cell.textLabel?.text = "\(String(describing: data[indexPath.section].termijn)) dagen"

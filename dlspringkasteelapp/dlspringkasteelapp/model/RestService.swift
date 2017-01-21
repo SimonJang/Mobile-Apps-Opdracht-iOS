@@ -58,6 +58,8 @@ class RestService {
         return returnDict
     }
     
+    /*
+    
     func maakReservatie (reservatie: Reservatie) -> Bool {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -84,7 +86,7 @@ class RestService {
     }
     
     func zoekReservaties(email:String) -> [ReservatieObject]? {
-        let hashed = UtilityServices.utilServices.md5(string: email)
+        let hashed = UtilityServices.utilServices.MD5(string: email)
         let endPoint = "http://localhost:3000/api/reservaties/\(hashed)"
         var reservatiesArr:[ReservatieObject]? = nil
         
@@ -96,6 +98,8 @@ class RestService {
         return reservatiesArr
         
     }
+     
+     */
 }
 
 class WinkelObject {
@@ -118,18 +122,6 @@ class WinkelObject {
         CIRCUS = json["CIRCUS"].intValue
         JUMP = json["JUMP"].intValue
     }
-    /*
-    required init(_ json: [String:Any]) {
-        naam = String(describing: json["naam"])
-        adres = String(describing: json["adres"])
-        telefoonnummer = String(describing: json["telefoonnummer"])
-        storeID = String(describing: json["storeID"])
-        JUNGLE = Int(String(describing: json["JUNGLE"]))!
-        PIRAAT = Int(String(describing: json["PIRAAT"]))!
-        CIRCUS = Int(String(describing: json["CIRCUS"]))!
-        JUMP = Int(String(describing: json["JUMP"]))!
-    }
-    */
 }
 
 class ReservatieObject {
@@ -152,6 +144,8 @@ class ReservatieObject {
     }
 }
 
+// Delegate voor opvragen van winkels
+
 protocol DataModelWinkelDelegate: class {
     func vraagWinkels(data: [WinkelObject])
 }
@@ -162,7 +156,7 @@ class DataModelWinkel {
     func requestWinkels() {
         Alamofire.request("http://localhost:3000/api/winkels").responseJSON(completionHandler:  {
             response in
-            /* Controleeert de call in console */
+            /* Controleer de call in console */
             print(response)
             guard let result = response.result.value as? AnyObject else {
                 print("Something went wrong with GET REQUEST to http://localhost:3000/api/winkels")
@@ -178,6 +172,38 @@ class DataModelWinkel {
             self.delegate?.vraagWinkels(data: winkels)
         })
         
+    }
+}
+
+// Delegate voor opvragen van reservaties voor specifieke klant
+
+protocol DataModelReservatieOpvragenKlantDelegate: class {
+    func vraagReservaties(data: [Reservatie])
+}
+
+class DataModelReservatieOpvragenKlant {
+    weak var delegate: DataModelReservatieOpvragenKlantDelegate?
+    
+    func requestReservatiesVoor(emailklant: String) {
+        if let hashemail = UtilityServices.utilServices.MD5(string: emailklant) {
+            Alamofire.request("http://localhost:3000/api/reservaties/\(hashemail)").responseJSON(completionHandler: {
+                response in
+                // Controleer de call in console */
+                print(response)
+                let result = response.result.value as AnyObject
+                var reservaties:[Reservatie] = []
+                let json = JSON(result)
+                for(_,object) in json {
+                    let reservatie = Reservatie(klant: object["email"].stringValue,
+                                                gewenstSpringkasteel: object["springkasteel"].stringValue,
+                                                datum: object["datum"].stringValue,
+                                                afhaalwinkel: object["storeID"].stringValue,
+                                                termijn: Int(object["termijn"].stringValue)!)
+                    reservaties.append(reservatie)
+                }
+                self.delegate?.vraagReservaties(data: reservaties)
+            })
+        }
     }
 }
 

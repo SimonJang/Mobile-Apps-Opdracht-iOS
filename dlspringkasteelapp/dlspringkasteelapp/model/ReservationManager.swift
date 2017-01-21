@@ -19,12 +19,13 @@ class ReservationManager {
     static var emailKlant: String = ""
     
     /* WERKENDE IMPLEMENTATIE MET TEMPDATA*/
-    
+    /*
     func maakReservatie(klantVoorReservatie: Klant,springkasteel: Springkasteel, winkel: Winkel, date:Date) -> Bool {
-        let nieuweReservatie = Reservatie(klant:klantVoorReservatie, gewenstSpringkasteel: springkasteel, datum: date, afhaalwinkel: winkel, termijn: 1, teBetalen: 99.00)
+        let nieuweReservatie = Reservatie(klant:klantVoorReservatie, gewenstSpringkasteel: springkasteel, datum: date, afhaalwinkel: winkel, termijn: 1)
         let confirmation = RestService.sharedInstance.maakReservatie(reservatie: nieuweReservatie)
         return confirmation
     }
+    */
     /*
     static func haalWinkelsOp() -> [Int:Winkel] {
         var winkels:[Int:Winkel] = [:]

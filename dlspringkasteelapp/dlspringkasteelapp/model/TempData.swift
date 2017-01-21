@@ -58,11 +58,10 @@ class DummyData {
         var reservaties:[Reservatie] = []
         getWinkels()
         let klant = Klant(f_name: "Simon",l_name: "Jang", klantEmail: "simon@test.be")
-        let date = Date() - 800000
-        if(emailAdres == "simon@test.be") {
-            reservaties.append(Reservatie(klant: klant, gewenstSpringkasteel: .JUNGLE, datum: date, afhaalwinkel: winkels[3957]!, termijn: 2, teBetalen: 99.00))
-            reservaties.append(Reservatie(klant: klant, gewenstSpringkasteel: .JUNGLE, datum: date-500000, afhaalwinkel: winkels[3957]!, termijn: 2, teBetalen: 99.00))
-            reservaties.append(Reservatie(klant: klant, gewenstSpringkasteel: .JUNGLE, datum: date-100000, afhaalwinkel: winkels[3957]!, termijn: 2, teBetalen: 99.00))
+        if emailAdres == "simon@test.be" {
+            reservaties.append(Reservatie(klant: klant.email, gewenstSpringkasteel: Springkasteel.JUNGLE.rawValue, datum: "03-04-2017", afhaalwinkel: "3957", termijn: 2))
+            // reservaties.append(Reservatie(klant: klant.email, gewenstSpringkasteel: Springkasteel.JUNGLE.rawValue, datum: "03-05-2017", afhaalwinkel: "3957", termijn: 2))
+            // reservaties.append(Reservatie(klant: klant.email, gewenstSpringkasteel: Springkasteel.JUNGLE.rawValue, datum: "03-06-2017", afhaalwinkel: "3957", termijn: 2))
         }
         return reservaties
     }

@@ -6,19 +6,22 @@
 
 import Foundation
 class Reservatie {
-    var klant: Klant
-    var springkasteel: Springkasteel
-    var datum: Date
-    var store: Winkel
+    var klantEmail: String
+    var springkasteel: String
+    var datum: String
+    var store: String
     var termijn: Int
-    var prijs: Double
+    var prijs: Double {
+        get {
+            return 99.00 * Double(termijn)
+        }
+    }
     
-    init(klant: Klant, gewenstSpringkasteel: Springkasteel, datum: Date, afhaalwinkel: Winkel, termijn: Int, teBetalen: Double) {
-        self.klant = klant
+    init(klant: String, gewenstSpringkasteel: String, datum: String, afhaalwinkel: String, termijn: Int) {
+        self.klantEmail = klant
         self.springkasteel = gewenstSpringkasteel
         self.datum = datum
         self.store = afhaalwinkel
         self.termijn = termijn
-        self.prijs = teBetalen
     }
 }

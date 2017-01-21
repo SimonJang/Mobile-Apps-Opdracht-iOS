@@ -1,17 +1,33 @@
-//
-//  ZoekReservatieViewController.swift
-//  dlspringkasteelapp
-//
-//  Created by Simon Jang on 19/01/17.
-//  Copyright © 2017 Simon Jang. All rights reserved.
-//
+// Controller voor opvragen van reservaties
 
 import UIKit
 
-class ZoekReservatieViewController: UIViewController {
+class ZoekReservatieViewController: UIViewController, DataModelReservatieOpvragenKlantDelegate {
+    
+    private let dataModelReservatieKlant = DataModelReservatieOpvragenKlant()
+    private var reservaties:[Reservatie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dataModelReservatieKlant.delegate = self
+        
+    }
+    
+    func vraagReservaties(data: [Reservatie]) {
+        self.reservaties = data
+        if(reservaties.count > 0 ) {
+            self.performSegue(withIdentifier: "ZoekReservatie", sender: "delegate")
+        }
+        else {
+            warningTxt?.isHidden = false
+            emailTxt?.text = ""
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        warningTxt!.isHidden = true
+        emailTxt!.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +41,40 @@ class ZoekReservatieViewController: UIViewController {
         switch(identifier) {
         case "ZoekReservatie":
             if let input = emailTxt?.text {
+                if !UtilityServices.utilServices.validateEmail(email: input) {
+                    emailTxt?.text = ""
+                    warningTxt?.isHidden = false
+                    return false
+                }
+                else if reservaties.isEmpty {
+                    dataModelReservatieKlant.requestReservatiesVoor(emailklant: input)
+                    return false
+                }
+                else {
+                    return true
+                }
+                
+            }
+            else {
+               return false
+            }
+        default:
+            return false
+        }
+    }
+    
+    /*
+     
+     // Oospronkelijke segue
+     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch(identifier) {
+        case "ZoekReservatie":
+            if let input = emailTxt?.text {
+                if !UtilityServices.utilServices.validateEmail(email: input) {
+                    return false
+                    warningTxt?.isHidden = false
+                }
                 let reservaties = ReservationManager.haalReservatieOpVoorKlantMetEmail(input)
                 if reservaties.count == 0 {
                     emailTxt!.text = ""
@@ -43,6 +93,7 @@ class ZoekReservatieViewController: UIViewController {
         }
         
     }
+ */
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ZoekReservatie" {
