@@ -62,18 +62,25 @@ class UtilityServices {
         return emailTest.evaluate(with: email)
     }
     
-    func bepaalAantalSpringkastelenVan(winkel:Winkel) -> [Springkasteel:Int] {
-        var springkastelenassortiment:[Springkasteel:Int] = [:]
-        springkastelenassortiment[Springkasteel.JUNGLE] = winkel.JUNGLE
-        springkastelenassortiment[Springkasteel.PIRAAT] = winkel.PIRAAT
-        springkastelenassortiment[Springkasteel.CIRCUS] = winkel.CIRCUS
-        springkastelenassortiment[Springkasteel.JUMP] = winkel.JUMP
-        print(springkastelenassortiment)
-        return springkastelenassortiment
+    // Functie kijkt welke springkastelen er allemaal beschikbaar zijn in bepaalde winkel op basis van json input
+
+    func analyseerBeschikbaarheid(vanWinkel: inout Winkel, metJSON: JSON) -> Winkel {
+        for(_, object) in metJSON {
+            let type = object["springkasteel"]
+            switch(type) {
+                case "jungle":
+                    vanWinkel.JUNGLE = vanWinkel.JUNGLE - 1
+                case "piraat":
+                    vanWinkel.PIRAAT = vanWinkel.PIRAAT - 1
+                case "circus":
+                    vanWinkel.CIRCUS = vanWinkel.CIRCUS - 1
+                case "jump":
+                    vanWinkel.JUMP = vanWinkel.JUMP - 1
+            default: break
+            }
+        }
+        return vanWinkel
     }
     
-    func analyseerBeschikbaarheid(json: JSON) -> [Springkasteel:Int]{
-        return [:]
-    }
     
 }

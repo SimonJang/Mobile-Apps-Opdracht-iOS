@@ -1,20 +1,24 @@
 //
 //  DatumSelectorViewController.swift
 //  dlspringkasteelapp
-//
-//  Created by Simon Jang on 19/01/17.
-//  Copyright © 2017 Simon Jang. All rights reserved.
-//
 
 import UIKit
 
-class DatumSelectorViewController: UIViewController {
+class DatumSelectorViewController: UIViewController, DataModelBeschikbareSpringkastelenDelegate {
 
     @IBOutlet weak var datePicker: UIDatePicker!
+    private let dataModelUpdatedNotifier = DataModelBeschikbareSpringkastelen()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDatePicker()
+        
+        dataModelUpdatedNotifier.delegate = self
+        
+    }
+    
+    func beschikbaarheidControlerenVoltooid() {
+        self.performSegue(withIdentifier: "toonSpringkastelen", sender: "checked springkastelen")
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +40,24 @@ class DatumSelectorViewController: UIViewController {
         datePicker.minimumDate = date
         datePicker.maximumDate = maxDate
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch(identifier) {
+            case "toonSpringkastelen":
+                let datum = datePicker.date;
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MM-yyyy"
+                dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+                let stringDate = dateFormatter.string(from: datum)
+                let winkelID = String(describing: ReservationManager.geselecteerdeWinkel!.storeId)
+                dataModelUpdatedNotifier.beschikbaarheidVoor(datum: stringDate, inwinkel: winkelID)
+                return false;
+            
+        default:
+            return false;
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         _ = segue.destination
         if let identifier = segue.identifier {

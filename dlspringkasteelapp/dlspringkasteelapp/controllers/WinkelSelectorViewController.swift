@@ -77,17 +77,11 @@ class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPi
             ReservationManager.geselecteerdeWinkel = winkel
         }
     }
-    
 
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if ReservationManager.geselecteerdeWinkel == nil {
+        if segue.identifier == "naarDatumSelector" {
             let keys = Array(winkels.keys)
             if let winkel = winkels[keys[0]] {
-                ReservationManager.springkastelen = UtilityServices.utilServices.bepaalAantalSpringkastelenVan(winkel: winkel)
                 ReservationManager.geselecteerdeWinkel = winkel
             }
         }

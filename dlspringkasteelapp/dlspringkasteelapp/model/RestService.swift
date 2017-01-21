@@ -210,7 +210,7 @@ class DataModelReservatieOpvragenKlant {
 // Controleren van beschikbaarheid van springkasteel
 
 protocol DataModelBeschikbareSpringkastelenDelegate: class {
-    func beschikbaarheidControleren(data:[Springkasteel:Int])
+    func beschikbaarheidControlerenVoltooid()
 }
 
 class DataModelBeschikbareSpringkastelen {
@@ -226,7 +226,9 @@ class DataModelBeschikbareSpringkastelen {
             print(response)
             let result = response.result.value as AnyObject
             let json = JSON(result)
-            // TODO verder aan werken
+            ReservationManager.geselecteerdeWinkel = UtilityServices.utilServices.analyseerBeschikbaarheid(vanWinkel: &ReservationManager.geselecteerdeWinkel!, metJSON: json)
+            
+            self.delegate?.beschikbaarheidControlerenVoltooid()
         })
     }
 }

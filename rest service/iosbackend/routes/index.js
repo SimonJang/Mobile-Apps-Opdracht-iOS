@@ -35,7 +35,7 @@ router.get('/api/reservaties/:id', function(req, res) {
 
 router.post('/api/winkels', function(req, res, next) {
   var datumRes = req.body.datum;
-  var winkelid = req.body.winkel.toString();
+  var winkelid = req.body.winkelID.toString();
 
   Reservaties.find({"storeID": winkelid, "datum": datumRes},{ springkasteel: 1, _id: 0}, function(err, resses) {
       res.json(resses)
