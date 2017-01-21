@@ -482,7 +482,7 @@
         <scene sceneID="z1F-63-KHI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1CR-pg-4Fg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Zoeken" id="kmu-fk-hve"/>
+                    <tabBarItem key="tabBarItem" title="Zoeken" image="Search" id="kmu-fk-hve"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JrZ-BL-rYn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -501,7 +501,7 @@
         <scene sceneID="hkg-lF-YeU">
             <objects>
                 <splitViewController id="45d-yZ-CGB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Info" id="w0i-L8-uwf"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="Info" id="w0i-L8-uwf"/>
                     <connections>
                         <segue destination="JHL-7j-Ofd" kind="relationship" relationship="masterViewController" id="new-r1-NqV"/>
                         <segue destination="m2f-re-Cxc" kind="relationship" relationship="detailViewController" id="bgv-Gq-hXS"/>
@@ -621,7 +621,7 @@
         <scene sceneID="FYj-zi-tpt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CW8-77-WOa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reserveren" id="6vl-ep-SAg"/>
+                    <tabBarItem key="tabBarItem" title="Reserveren" image="Reserveren" id="6vl-ep-SAg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iC3-Bq-px3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -655,7 +655,12 @@
             <point key="canvasLocation" x="1185" y="1605"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Info" width="30" height="30"/>
+        <image name="Reserveren" width="30" height="30"/>
+        <image name="Search" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IfR-PG-a8Q"/>
+        <segue reference="bgv-Gq-hXS"/>
     </inferredMetricsTieBreakers>
 </document>

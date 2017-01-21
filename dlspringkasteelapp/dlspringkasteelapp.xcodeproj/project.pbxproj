@@ -18,7 +18,7 @@
 		884911AF1E2FD2C600F8492C /* Winkel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884911AE1E2FD2C600F8492C /* Winkel.swift */; };
 		884911B11E2FD2E400F8492C /* Springkasteel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884911B01E2FD2E400F8492C /* Springkasteel.swift */; };
 		884911B31E2FD30B00F8492C /* Klant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884911B21E2FD30B00F8492C /* Klant.swift */; };
-		884911B51E2FD32000F8492C /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884911B41E2FD32000F8492C /* RestService.swift */; };
+		884911B51E2FD32000F8492C /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884911B41E2FD32000F8492C /* Delegates.swift */; };
 		884911B91E2FD34500F8492C /* TempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884911B81E2FD34500F8492C /* TempData.swift */; };
 		887056DB1E30E1F400201958 /* ZoekReservatieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887056DA1E30E1F400201958 /* ZoekReservatieViewController.swift */; };
 		887056DD1E30E3DC00201958 /* ReservatieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887056DC1E30E3DC00201958 /* ReservatieTableViewController.swift */; };
@@ -48,7 +48,7 @@
 		884911AE1E2FD2C600F8492C /* Winkel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Winkel.swift; sourceTree = "<group>"; };
 		884911B01E2FD2E400F8492C /* Springkasteel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Springkasteel.swift; path = model/Springkasteel.swift; sourceTree = "<group>"; };
 		884911B21E2FD30B00F8492C /* Klant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Klant.swift; path = model/Klant.swift; sourceTree = "<group>"; };
-		884911B41E2FD32000F8492C /* RestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestService.swift; path = model/RestService.swift; sourceTree = "<group>"; };
+		884911B41E2FD32000F8492C /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Delegates.swift; path = model/Delegates.swift; sourceTree = "<group>"; };
 		884911B81E2FD34500F8492C /* TempData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TempData.swift; path = model/TempData.swift; sourceTree = "<group>"; };
 		887056DA1E30E1F400201958 /* ZoekReservatieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoekReservatieViewController.swift; path = controllers/ZoekReservatieViewController.swift; sourceTree = "<group>"; };
 		887056DC1E30E3DC00201958 /* ReservatieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReservatieTableViewController.swift; path = controllers/ReservatieTableViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 				884911AE1E2FD2C600F8492C /* Winkel.swift */,
 				884911B01E2FD2E400F8492C /* Springkasteel.swift */,
 				884911B21E2FD30B00F8492C /* Klant.swift */,
-				884911B41E2FD32000F8492C /* RestService.swift */,
+				884911B41E2FD32000F8492C /* Delegates.swift */,
 				884911B81E2FD34500F8492C /* TempData.swift */,
 				888CF07C1E32667B004C7FFF /* dlspringkasteelapp-Bridging-Header.h */,
 				888CF0811E3266F0004C7FFF /* UtilityServices.swift */,
@@ -307,7 +307,7 @@
 				884911B31E2FD30B00F8492C /* Klant.swift in Sources */,
 				884911AD1E2FD2AD00F8492C /* Reservatie.swift in Sources */,
 				887056DD1E30E3DC00201958 /* ReservatieTableViewController.swift in Sources */,
-				884911B51E2FD32000F8492C /* RestService.swift in Sources */,
+				884911B51E2FD32000F8492C /* Delegates.swift in Sources */,
 				884911B11E2FD2E400F8492C /* Springkasteel.swift in Sources */,
 				888CF0821E3266F0004C7FFF /* UtilityServices.swift in Sources */,
 				88F7B8B21E323F1400F25BB1 /* BevestigingViewController.swift in Sources */,

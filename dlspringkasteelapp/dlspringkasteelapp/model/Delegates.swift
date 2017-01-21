@@ -2,7 +2,7 @@
 //  RestService.swift
 //  springkasteelapp
 
-// Code gebaseerd op
+// Code gebaseerd op Source:
 //      https://devdactic.com/parse-json-with-swift/
 //      https://github.com/Alamofire/Alamofire voorbeelden
 //      https://github.com/SwiftyJSON/SwiftyJSON voorbeelden
@@ -15,15 +15,8 @@
 
 import SwiftyJSON
 import Alamofire
-
 import Foundation
-class RestService {
-    
-    static let sharedInstance = RestService()
-    var sessionManager: SessionManager!
-    var returnWinkels:[WinkelObject] = []
- 
-}
+
 
 class WinkelObject {
     var naam: String
@@ -47,26 +40,6 @@ class WinkelObject {
     }
 }
 
-class ReservatieObject {
-    var datum:Date?
-    var type:Springkasteel?
-    var winkelNaam: String
-    // Placeholders
-    let prijs = 99.0
-    let termijn = 2
-    
-    required init(_ json: JSON) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-        let dateString = json["datum"].stringValue
-        
-        datum = dateFormatter.date(from:dateString)
-        type = Springkasteel(rawValue: json["type"].stringValue)
-        winkelNaam = json["winkel"].stringValue
-    }
-}
-
 // Delegate voor opvragen van winkels
 
 protocol DataModelWinkelDelegate: class {
@@ -81,6 +54,7 @@ class DataModelWinkel {
             response in
             /* Controleer de call in console */
             print(response)
+            
             let result = response.result.value as AnyObject
             var winkels:[WinkelObject] = []
             let json = JSON(result)

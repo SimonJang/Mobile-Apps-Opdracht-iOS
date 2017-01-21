@@ -15,6 +15,14 @@ class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     @IBOutlet weak var winkelPicker: UIPickerView!
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if winkelPicker.numberOfRows(inComponent: 0) == 0 {
+            return false
+        }
+        else {
+            return true
+        }
+    }
     
     override func viewDidLoad() {
         
@@ -36,6 +44,7 @@ class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        dataModelWinkel.requestWinkels()
         /*
         DispatchQueue.global(qos: .userInteractive).async {
             ReservationManager.fetchWinkels()
