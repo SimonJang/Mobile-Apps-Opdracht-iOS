@@ -80,9 +80,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="L0g-g0-oUS" firstAttribute="leading" secondItem="A95-IB-b9V" secondAttribute="leading" id="WqS-FW-wP7"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

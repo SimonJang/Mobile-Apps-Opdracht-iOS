@@ -56,7 +56,6 @@ class DummyData {
     
     func getReservaties(emailAdres: String) -> [Reservatie]? {
         var reservaties:[Reservatie] = []
-        getWinkels()
         let klant = Klant(f_name: "Simon",l_name: "Jang", klantEmail: "simon@test.be")
         if emailAdres == "simon@test.be" {
             reservaties.append(Reservatie(klant: klant.email, gewenstSpringkasteel: Springkasteel.JUNGLE.rawValue, datum: "03-04-2017", afhaalwinkel: "3957", termijn: 2))
