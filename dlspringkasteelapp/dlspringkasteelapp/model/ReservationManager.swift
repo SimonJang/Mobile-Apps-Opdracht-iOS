@@ -17,6 +17,7 @@ class ReservationManager {
     static var geselecteerdeWinkel: Winkel? = nil
     static var geselecteerdeDatum: Date? = nil
     static var emailKlant: String = ""
+    static var reservaties:[Reservatie] = []
     
     /* WERKENDE IMPLEMENTATIE MET TEMPDATA*/
     /*

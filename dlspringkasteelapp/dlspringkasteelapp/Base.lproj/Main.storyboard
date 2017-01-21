@@ -41,29 +41,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geen reservaties gevonden !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTH-5z-CDg">
+                                <rect key="frame" x="71" y="398" width="233" height="20.5"/>
+                                <color key="backgroundColor" red="1" green="0.12060499499095179" blue="0.1012575463572658" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A95-IB-b9V">
-                                <rect key="frame" x="56.5" y="254" width="262.5" height="159"/>
+                                <rect key="frame" x="0.0" y="427" width="375" height="159"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opzoeken Reservatie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGK-qm-gUZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9R-SF-rKH">
-                                        <rect key="frame" x="0.0" y="48.5" width="262.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="48.5" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-g0-oUS">
-                                        <rect key="frame" x="0.0" y="84" width="262.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="84" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPN-ue-zQa">
-                                        <rect key="frame" x="0.0" y="129" width="262.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="129" width="375" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Zoeken"/>
@@ -72,22 +80,18 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="L0g-g0-oUS" firstAttribute="leading" secondItem="A95-IB-b9V" secondAttribute="leading" id="WqS-FW-wP7"/>
+                                </constraints>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geen reservaties gevonden !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTH-5z-CDg">
-                                <rect key="frame" x="71" y="183.5" width="233" height="20.5"/>
-                                <color key="backgroundColor" red="1" green="0.12060499499095179" blue="0.1012575463572658" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nTH-5z-CDg" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="IYL-yh-mhY"/>
-                            <constraint firstItem="A95-IB-b9V" firstAttribute="centerY" secondItem="Axx-uH-bD0" secondAttribute="centerY" id="Kfd-zw-SD9"/>
-                            <constraint firstItem="A95-IB-b9V" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="hKW-vp-AVD"/>
-                            <constraint firstItem="A95-IB-b9V" firstAttribute="top" secondItem="nTH-5z-CDg" secondAttribute="bottom" constant="50" id="sx7-Jv-4on"/>
+                            <constraint firstItem="V1d-vW-gIB" firstAttribute="top" secondItem="A95-IB-b9V" secondAttribute="bottom" constant="32" id="Ee5-C2-w0z"/>
+                            <constraint firstItem="A95-IB-b9V" firstAttribute="top" secondItem="nTH-5z-CDg" secondAttribute="bottom" constant="8.5" id="T3g-Yy-0rT"/>
+                            <constraint firstItem="nTH-5z-CDg" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="WA2-Zi-DoK"/>
+                            <constraint firstItem="A95-IB-b9V" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="nYe-gk-VAq"/>
+                            <constraint firstItem="A95-IB-b9V" firstAttribute="width" secondItem="Axx-uH-bD0" secondAttribute="width" id="vHi-YY-TtY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Zoeken Reservatie" id="ib0-BU-tEj">
@@ -102,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="1184.8" y="786.65667166416802"/>
         </scene>
-        <!--Winkel kiezen-->
+        <!--Selecteer een winkel-->
         <scene sceneID="bQa-de-dwL">
             <objects>
                 <viewController id="tg7-Yc-x4X" customClass="WinkelSelectorViewController" customModule="dlspringkasteelapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,19 +119,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="24b-um-Lpk">
-                                <rect key="frame" x="27" y="196" width="320" height="285"/>
+                                <rect key="frame" x="27" y="343" width="320" height="255"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecteer een winkel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5H-1G-Je6">
-                                        <rect key="frame" x="60.5" y="0.0" width="199" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kpb-18-7NV">
-                                        <rect key="frame" x="0.0" y="30" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrb-ja-Ozk">
-                                        <rect key="frame" x="0.0" y="252" width="320" height="33"/>
+                                        <rect key="frame" x="0.0" y="222" width="320" height="33"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -144,13 +142,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dpe-J5-K7i" firstAttribute="top" secondItem="24b-um-Lpk" secondAttribute="bottom" constant="137" id="I6s-NG-Ypw"/>
                             <constraint firstItem="24b-um-Lpk" firstAttribute="leading" secondItem="0Uc-aa-zCi" secondAttribute="leadingMargin" constant="11" id="iUI-d0-eL9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="24b-um-Lpk" secondAttribute="trailing" constant="12" id="mWL-L3-S0S"/>
                             <constraint firstItem="24b-um-Lpk" firstAttribute="centerX" secondItem="0Uc-aa-zCi" secondAttribute="centerX" id="uKj-ny-nGn"/>
+                            <constraint firstItem="Dpe-J5-K7i" firstAttribute="top" secondItem="Kpb-18-7NV" secondAttribute="bottom" constant="59" id="wqb-e3-PBW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Winkel kiezen" id="nTj-tR-50O">
+                    <navigationItem key="navigationItem" title="Selecteer een winkel" id="nTj-tR-50O">
                         <barButtonItem key="backBarButtonItem" title="Terug" id="cib-4q-sro"/>
                     </navigationItem>
                     <connections>

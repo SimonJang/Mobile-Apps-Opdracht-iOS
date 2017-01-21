@@ -15,8 +15,7 @@ class ReservatieTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.maakGebruiker(ReservationManager.huidigeGebruiker)
-        data = ReservationManager.haalReservatieOpVoorKlantMetEmail(user)
+        data = ReservationManager.reservaties
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,40 +38,26 @@ class ReservatieTableViewController: UITableViewController {
         return 6
     }
     
-    public func maakGebruiker(_ naam:String) {
-        user = naam;
-        print(naam)
-    }
-    /*
-     
-     // Enkel een oplossing als tableView functie niet werkt
-     
-    func reservatieFormatter(reservatie: Reservatie) -> String {
-        let _ = "Reservatie op \(reservatie.datum)"
-    }
-     */
-    
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "labelCel", for: indexPath)
         
         if indexPath.row == 0 {
-            cell.textLabel?.text = String(describing: data[indexPath.section].datum)
+            cell.textLabel?.text = "Datum reservatie: \(data[indexPath.section].datum)"
         }
         else if indexPath.row == 1  {
-            cell.textLabel?.text = "\(data[indexPath.section].klantEmail)"
+            cell.textLabel?.text = "Contactgegevens: \(data[indexPath.section].klantEmail)"
         }
         else if indexPath.row == 2 {
-            cell.textLabel?.text = String(describing: data[indexPath.section].prijs)
+            cell.textLabel?.text = "Te betalen: \(String(describing: data[indexPath.section].prijs)) €"
         }
         else if indexPath.row == 3 {
-            cell.textLabel?.text = String(describing: data[indexPath.section].springkasteel)
+            cell.textLabel?.text = "Type springkasteel: \(data[indexPath.section].springkasteel.capitalized)"
         }
         else if indexPath.row == 4 {
-            cell.textLabel?.text = data[indexPath.section].store
+            cell.textLabel?.text = "Afhaalpunt: \(data[indexPath.section].store)"
         }
         else if indexPath.row == 5 {
-            cell.textLabel?.text = "\(String(describing: data[indexPath.section].termijn)) dagen"
+            cell.textLabel?.text = "Duur huur: \(String(describing: data[indexPath.section].termijn)) dagen"
         }
         /*
          

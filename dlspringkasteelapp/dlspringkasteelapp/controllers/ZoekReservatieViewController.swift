@@ -17,10 +17,12 @@ class ZoekReservatieViewController: UIViewController, DataModelReservatieOpvrage
     func vraagReservaties(data: [Reservatie]) {
         self.reservaties = data
         if(reservaties.count > 0 ) {
+            ReservationManager.reservaties = reservaties
             self.performSegue(withIdentifier: "ZoekReservatie", sender: "delegate")
         }
         else {
             warningTxt?.isHidden = false
+            warningTxt?.text = "Geen reservaties gevonden"
             emailTxt?.text = ""
         }
     }
@@ -43,6 +45,7 @@ class ZoekReservatieViewController: UIViewController, DataModelReservatieOpvrage
             if let input = emailTxt?.text {
                 if !UtilityServices.utilServices.validateEmail(email: input) {
                     emailTxt?.text = ""
+                    warningTxt?.text = "Ongeldig e-mail adres!"
                     warningTxt?.isHidden = false
                     return false
                 }
@@ -50,10 +53,13 @@ class ZoekReservatieViewController: UIViewController, DataModelReservatieOpvrage
                     dataModelReservatieKlant.requestReservatiesVoor(emailklant: input)
                     return false
                 }
+                else if reservaties.filter({ $0.klantEmail == input}).count == 0 {
+                    dataModelReservatieKlant.requestReservatiesVoor(emailklant: input)
+                    return false
+                }
                 else {
                     return true
                 }
-                
             }
             else {
                return false
@@ -65,7 +71,7 @@ class ZoekReservatieViewController: UIViewController, DataModelReservatieOpvrage
     
     /*
      
-     // Oospronkelijke segue
+     // Oospronkelijke shouldPerformSegue, zonder REST
      
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch(identifier) {
