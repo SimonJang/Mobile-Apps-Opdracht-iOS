@@ -68,38 +68,6 @@ class ZoekReservatieViewController: UIViewController, DataModelReservatieOpvrage
             return false
         }
     }
-    
-    /*
-     
-     // Oospronkelijke shouldPerformSegue, zonder REST
-     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        switch(identifier) {
-        case "ZoekReservatie":
-            if let input = emailTxt?.text {
-                if !UtilityServices.utilServices.validateEmail(email: input) {
-                    return false
-                    warningTxt?.isHidden = false
-                }
-                let reservaties = ReservationManager.haalReservatieOpVoorKlantMetEmail(input)
-                if reservaties.count == 0 {
-                    emailTxt!.text = ""
-                    warningTxt!.isHidden = false
-                    return false
-                }
-                else {
-                    return true
-                }
-            }
-            else {
-               return false
-            }
-        default:
-            return true
-        }
-        
-    }
- */
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ZoekReservatie" {

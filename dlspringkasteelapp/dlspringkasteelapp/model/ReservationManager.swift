@@ -38,7 +38,7 @@ class ReservationManager {
         let springkasteel = Springkasteel(rawValue: naam)
         return springkasteel!
     }
-
+    
     // Beslissen welk 1 van de functies die we gaan gebruiken
     /*
     static func haalReservatieOp(idNumber: Int, email:String) -> Reservatie? {

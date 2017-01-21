@@ -25,6 +25,7 @@
 		887056DF1E311F7F00201958 /* WinkelSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887056DE1E311F7F00201958 /* WinkelSelectorViewController.swift */; };
 		887056E11E3131BC00201958 /* DatumSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887056E01E3131BC00201958 /* DatumSelectorViewController.swift */; };
 		888CF0821E3266F0004C7FFF /* UtilityServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888CF0811E3266F0004C7FFF /* UtilityServices.swift */; };
+		88D1D7B11E33D1E5005DA774 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D1D7B01E33D1E5005DA774 /* CustomTableViewCell.swift */; };
 		88F7B8AA1E31EDEB00F25BB1 /* VoorwaardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8A91E31EDEB00F25BB1 /* VoorwaardenViewController.swift */; };
 		88F7B8AC1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8AB1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift */; };
 		88F7B8AE1E321BA800F25BB1 /* SpringKasteelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7B8AD1E321BA800F25BB1 /* SpringKasteelTableViewController.swift */; };
@@ -55,6 +56,7 @@
 		887056E01E3131BC00201958 /* DatumSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatumSelectorViewController.swift; path = controllers/DatumSelectorViewController.swift; sourceTree = "<group>"; };
 		888CF07C1E32667B004C7FFF /* dlspringkasteelapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dlspringkasteelapp-Bridging-Header.h"; sourceTree = "<group>"; };
 		888CF0811E3266F0004C7FFF /* UtilityServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilityServices.swift; path = model/UtilityServices.swift; sourceTree = "<group>"; };
+		88D1D7B01E33D1E5005DA774 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = UI/CustomTableViewCell.swift; sourceTree = "<group>"; };
 		88F7B8A91E31EDEB00F25BB1 /* VoorwaardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoorwaardenViewController.swift; path = controllers/VoorwaardenViewController.swift; sourceTree = "<group>"; };
 		88F7B8AB1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HuurDetailSplitViewController.swift; path = controllers/HuurDetailSplitViewController.swift; sourceTree = "<group>"; };
 		88F7B8AD1E321BA800F25BB1 /* SpringKasteelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringKasteelTableViewController.swift; path = controllers/SpringKasteelTableViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		884911921E2FD23300F8492C /* dlspringkasteelapp */ = {
 			isa = PBXGroup;
 			children = (
+				88D1D7AF1E33D1B6005DA774 /* UI */,
 				884911BA1E2FD55C00F8492C /* controllers */,
 				884911A91E2FD25000F8492C /* model */,
 				884911931E2FD23300F8492C /* AppDelegate.swift */,
@@ -146,6 +149,14 @@
 				88F7B8B11E323F1400F25BB1 /* BevestigingViewController.swift */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		88D1D7AF1E33D1B6005DA774 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				88D1D7B01E33D1E5005DA774 /* CustomTableViewCell.swift */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 		92ADA2494FE8FB65EC0C59AE /* Frameworks */ = {
@@ -292,6 +303,7 @@
 			files = (
 				88F7B8B01E3231DA00F25BB1 /* ReserveerViewController.swift in Sources */,
 				88F7B8AC1E31F1F500F25BB1 /* HuurDetailSplitViewController.swift in Sources */,
+				88D1D7B11E33D1E5005DA774 /* CustomTableViewCell.swift in Sources */,
 				884911B31E2FD30B00F8492C /* Klant.swift in Sources */,
 				884911AD1E2FD2AD00F8492C /* Reservatie.swift in Sources */,
 				887056DD1E30E3DC00201958 /* ReservatieTableViewController.swift in Sources */,

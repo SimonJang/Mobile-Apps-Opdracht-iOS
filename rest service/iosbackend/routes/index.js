@@ -8,7 +8,6 @@ var crypto = require('crypto');
 var Reservaties = mongoose.model('Reservatie');
 var Winkels = mongoose.model('Winkel');
 
-/* GET home page. */
 router.get('/', function(req, res) {
   res.json(({'Gebruik': 'Testen van Springkasteel REST service'}))
 });
