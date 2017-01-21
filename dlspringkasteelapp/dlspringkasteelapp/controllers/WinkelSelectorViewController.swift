@@ -81,7 +81,8 @@ class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "naarDatumSelector" {
             let keys = Array(winkels.keys)
-            if let winkel = winkels[keys[0]] {
+            let row = winkelPicker.selectedRow(inComponent: 0)
+            if let winkel = winkels[keys[row]] {
                 ReservationManager.geselecteerdeWinkel = winkel
             }
         }
