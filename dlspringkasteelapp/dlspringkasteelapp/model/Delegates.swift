@@ -50,7 +50,7 @@ class DataModelWinkel {
     weak var delegate: DataModelWinkelDelegate?
     
     func requestWinkels() {
-        Alamofire.request("http://localhost:3000/api/winkels").responseJSON(completionHandler:  {
+        Alamofire.request("https://iosbackendspringkastelen.herokuapp.com/api/winkels").responseJSON(completionHandler:  {
             response in
             /* Controleer de call in console */
             print(response)
@@ -79,7 +79,7 @@ class DataModelReservatieOpvragenKlant {
     
     func requestReservatiesVoor(emailklant: String) {
         if let hashemail = UtilityServices.utilServices.MD5(string: emailklant) {
-            Alamofire.request("http://localhost:3000/api/reservaties/\(hashemail)").responseJSON(completionHandler: {
+            Alamofire.request("https://iosbackendspringkastelen.herokuapp.com/api/reservaties/\(hashemail)").responseJSON(completionHandler: {
                 response in
                 // Controleer de call in console */
                 print(response)
@@ -112,7 +112,7 @@ class DataModelBeschikbareSpringkastelen {
     func beschikbaarheidVoor(datum:String, inwinkel: String) {
         
         let post:[String:Any] = ["winkelID": inwinkel, "datum":datum]
-        let endPoint = "http://localhost:3000/api/winkels"
+        let endPoint = "https://iosbackendspringkastelen.herokuapp.com/api/winkels"
 
         Alamofire.request(endPoint, method: .post, parameters: post, encoding: JSONEncoding.default).responseJSON(completionHandler: {
             response in
@@ -143,7 +143,7 @@ class DataModelRegistreerReservatie {
                                  "datum": reservatie.datum,
                                  "storeID": reservatie.store,
                                  "springkasteel": reservatie.springkasteel]
-        let endPoint = "http://localhost:3000/api/reservatie"
+        let endPoint = "https://iosbackendspringkastelen.herokuapp.com/api/reservatie"
         
         Alamofire.request(endPoint, method: .post, parameters: post, encoding: JSONEncoding.default).responseJSON(completionHandler: {
             response in
