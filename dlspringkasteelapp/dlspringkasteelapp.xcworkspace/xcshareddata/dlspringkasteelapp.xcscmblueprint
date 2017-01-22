@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5B34632296DE141E5D630899AB52CB70B12513E5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3031384E9133F80C2294B32A44FF4E9C4430E15F" : 9223372036854775807,
+    "5B34632296DE141E5D630899AB52CB70B12513E5" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BE34AADE-1500-4D57-98E5-7104630E8F9D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3031384E9133F80C2294B32A44FF4E9C4430E15F" : "",
+    "5B34632296DE141E5D630899AB52CB70B12513E5" : "dlspringkasteelapp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "dlspringkasteelapp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "dlspringkasteelapp.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SimonJang\/Mobile-Apps-Opdracht-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3031384E9133F80C2294B32A44FF4E9C4430E15F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SimonJang\/Examen-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5B34632296DE141E5D630899AB52CB70B12513E5"
+    }
+  ]
+}
