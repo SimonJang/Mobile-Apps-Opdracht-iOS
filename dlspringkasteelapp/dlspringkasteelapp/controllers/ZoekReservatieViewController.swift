@@ -8,6 +8,9 @@ class ZoekReservatieViewController: UIViewController, DataModelReservatieOpvrage
     private let dataModelReservatieKlant = DataModelReservatieOpvragenKlant()
     private var reservaties:[Reservatie] = []
     
+    @IBOutlet weak var warningTxt: UILabel!
+    @IBOutlet weak var emailTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,8 +40,6 @@ class ZoekReservatieViewController: UIViewController, DataModelReservatieOpvrage
         super.didReceiveMemoryWarning()
         
     }
-    @IBOutlet weak var emailTxt: UITextField?
-    @IBOutlet weak var warningTxt: UILabel?
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch(identifier) {

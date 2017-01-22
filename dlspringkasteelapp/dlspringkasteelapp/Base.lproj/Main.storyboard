@@ -41,16 +41,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geen reservaties gevonden !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTH-5z-CDg">
-                                <rect key="frame" x="71" y="410" width="233" height="20.5"/>
-                                <color key="backgroundColor" red="1" green="0.12060499499095179" blue="0.1012575463572658" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A95-IB-b9V">
-                                <rect key="frame" x="0.0" y="439" width="375" height="159"/>
+                                <rect key="frame" x="0.0" y="449" width="375" height="69"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opzoeken Reservatie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGK-qm-gUZ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="33.5"/>
@@ -64,39 +56,128 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-g0-oUS">
-                                        <rect key="frame" x="0.0" y="84" width="375" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPN-ue-zQa">
-                                        <rect key="frame" x="0.0" y="129" width="375" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Zoeken"/>
-                                        <connections>
-                                            <segue destination="XiC-El-dxX" kind="show" identifier="ZoekReservatie" id="GRp-JC-qiK"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RA-Fb-Syi">
+                                <rect key="frame" x="56" y="528" width="263" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="search"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OX3-Lo-D6V">
+                                <rect key="frame" x="-0.5" y="568" width="375.5" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Zoeken"/>
+                                <connections>
+                                    <segue destination="XiC-El-dxX" kind="show" identifier="ZoekReservatie" id="qQQ-bu-QoY"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geen reservaties gevonden !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTH-5z-CDg">
+                                <rect key="frame" x="71" y="422" width="233" height="20.5"/>
+                                <color key="backgroundColor" red="1" green="0.12060499499095179" blue="0.1012575463572658" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="OX3-Lo-D6V" firstAttribute="width" secondItem="Axx-uH-bD0" secondAttribute="width" id="2jj-P7-Mcp"/>
+                            <constraint firstItem="A95-IB-b9V" firstAttribute="width" secondItem="Axx-uH-bD0" secondAttribute="width" id="7v0-p2-keG"/>
+                            <constraint firstItem="A95-IB-b9V" firstAttribute="centerY" secondItem="Axx-uH-bD0" secondAttribute="centerY" id="B2E-0W-ncq"/>
                             <constraint firstItem="V1d-vW-gIB" firstAttribute="top" secondItem="A95-IB-b9V" secondAttribute="bottom" constant="20" id="Ee5-C2-w0z"/>
+                            <constraint firstItem="nTH-5z-CDg" firstAttribute="width" secondItem="Axx-uH-bD0" secondAttribute="width" id="F0J-N4-F9G"/>
+                            <constraint firstItem="OX3-Lo-D6V" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="G4C-1d-2jA"/>
+                            <constraint firstItem="nTH-5z-CDg" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="GVL-aa-ISw"/>
+                            <constraint firstItem="2RA-Fb-Syi" firstAttribute="leading" secondItem="Axx-uH-bD0" secondAttribute="leadingMargin" constant="40" id="SZh-tl-peW"/>
                             <constraint firstItem="A95-IB-b9V" firstAttribute="top" secondItem="nTH-5z-CDg" secondAttribute="bottom" constant="8.5" id="T3g-Yy-0rT"/>
                             <constraint firstItem="nTH-5z-CDg" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="WA2-Zi-DoK"/>
+                            <constraint firstItem="A95-IB-b9V" firstAttribute="top" secondItem="nTH-5z-CDg" secondAttribute="bottom" constant="6.5" id="X3a-B4-Rzm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2RA-Fb-Syi" secondAttribute="trailing" constant="40" id="YlW-bn-nn8"/>
+                            <constraint firstItem="nTH-5z-CDg" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="ZaG-bw-HuA"/>
+                            <constraint firstItem="V1d-vW-gIB" firstAttribute="top" secondItem="nTH-5z-CDg" secondAttribute="bottom" constant="175.5" id="aLS-F4-zQQ"/>
+                            <constraint firstItem="2RA-Fb-Syi" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="aSN-X0-HCj"/>
+                            <constraint firstItem="2RA-Fb-Syi" firstAttribute="top" secondItem="A95-IB-b9V" secondAttribute="bottom" constant="8" id="ePu-iG-opS">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="A95-IB-b9V" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="nYe-gk-VAq"/>
+                            <constraint firstItem="nTH-5z-CDg" firstAttribute="leading" secondItem="Axx-uH-bD0" secondAttribute="leadingMargin" constant="54" id="ntX-2R-chT"/>
+                            <constraint firstItem="OX3-Lo-D6V" firstAttribute="top" secondItem="2RA-Fb-Syi" secondAttribute="bottom" constant="8" id="txZ-9N-IhT">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="V1d-vW-gIB" firstAttribute="top" secondItem="OX3-Lo-D6V" secondAttribute="bottom" constant="8" id="v9x-RO-tf2">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="A95-IB-b9V" firstAttribute="width" secondItem="Axx-uH-bD0" secondAttribute="width" id="vHi-YY-TtY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nTH-5z-CDg" secondAttribute="trailing" constant="56" id="vKg-bC-ZMl"/>
+                            <constraint firstItem="A95-IB-b9V" firstAttribute="centerX" secondItem="Axx-uH-bD0" secondAttribute="centerX" id="ylz-5A-TAi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="2RA-Fb-Syi"/>
+                                <exclude reference="OX3-Lo-D6V"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="F0J-N4-F9G"/>
+                                <exclude reference="GVL-aa-ISw"/>
+                                <exclude reference="ZaG-bw-HuA"/>
+                                <exclude reference="ntX-2R-chT"/>
+                                <exclude reference="vKg-bC-ZMl"/>
+                                <exclude reference="7v0-p2-keG"/>
+                                <exclude reference="B2E-0W-ncq"/>
+                                <exclude reference="X3a-B4-Rzm"/>
+                                <exclude reference="ylz-5A-TAi"/>
+                                <exclude reference="SZh-tl-peW"/>
+                                <exclude reference="YlW-bn-nn8"/>
+                                <exclude reference="aSN-X0-HCj"/>
+                                <exclude reference="ePu-iG-opS"/>
+                                <exclude reference="2jj-P7-Mcp"/>
+                                <exclude reference="G4C-1d-2jA"/>
+                                <exclude reference="txZ-9N-IhT"/>
+                                <exclude reference="aLS-F4-zQQ"/>
+                                <exclude reference="v9x-RO-tf2"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="2RA-Fb-Syi"/>
+                                <include reference="OX3-Lo-D6V"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="F0J-N4-F9G"/>
+                                <exclude reference="GVL-aa-ISw"/>
+                                <exclude reference="WA2-Zi-DoK"/>
+                                <include reference="ZaG-bw-HuA"/>
+                                <exclude reference="ntX-2R-chT"/>
+                                <exclude reference="vKg-bC-ZMl"/>
+                                <include reference="7v0-p2-keG"/>
+                                <exclude reference="B2E-0W-ncq"/>
+                                <exclude reference="T3g-Yy-0rT"/>
+                                <include reference="X3a-B4-Rzm"/>
+                                <exclude reference="nYe-gk-VAq"/>
+                                <exclude reference="vHi-YY-TtY"/>
+                                <include reference="ylz-5A-TAi"/>
+                                <include reference="SZh-tl-peW"/>
+                                <include reference="YlW-bn-nn8"/>
+                                <include reference="aSN-X0-HCj"/>
+                                <include reference="ePu-iG-opS"/>
+                                <include reference="2jj-P7-Mcp"/>
+                                <include reference="G4C-1d-2jA"/>
+                                <include reference="txZ-9N-IhT"/>
+                                <exclude reference="Ee5-C2-w0z"/>
+                                <exclude reference="aLS-F4-zQQ"/>
+                                <include reference="v9x-RO-tf2"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Zoeken Reservatie" id="ib0-BU-tEj">
                         <barButtonItem key="backBarButtonItem" title="Terug" id="0kM-rO-nm0"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="emailTxt" destination="L0g-g0-oUS" id="sUx-7j-ltU"/>
-                        <outlet property="warningTxt" destination="nTH-5z-CDg" id="ATf-yH-tOf"/>
+                        <outlet property="emailTxt" destination="2RA-Fb-Syi" id="ZRK-Xj-vZg"/>
+                        <outlet property="warningTxt" destination="nTH-5z-CDg" id="PXm-an-Jvu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AR-bu-sdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -169,7 +250,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gl0-eu-Xh5">
-                                <rect key="frame" x="-0.5" y="308" width="375" height="290"/>
+                                <rect key="frame" x="0.0" y="308" width="375" height="290"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecteer een datum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYe-df-3GD">
                                         <rect key="frame" x="88" y="0.0" width="199" height="24"/>
@@ -356,7 +437,7 @@
                                 </constraints>
                             </stackView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gelieve een e-mail adres in te geven!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjz-XE-U6l">
-                                <rect key="frame" x="-0.5" y="366" width="375" height="24"/>
+                                <rect key="frame" x="0.0" y="366" width="375" height="24"/>
                                 <color key="backgroundColor" red="1" green="0.12060499500000001" blue="0.1012575464" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -407,7 +488,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="U krijgt zo meteen een e-mail met verdere instructies. Wij wensen u alvast veel (spring)plezier met het springkasteel" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAd-ej-4B4">
-                                        <rect key="frame" x="19.5" y="43" width="336" height="77"/>
+                                        <rect key="frame" x="187.5" y="43" width="0.0" height="77"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -453,11 +534,11 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1t-1M-QbV" id="sIM-vy-e4t">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uKg-0W-sct">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
