@@ -94,11 +94,13 @@
 		884911921E2FD23300F8492C /* dlspringkasteelapp */ = {
 			isa = PBXGroup;
 			children = (
+				8849119D1E2FD23300F8492C /* Assets.xcassets */,
+				884911A21E2FD23300F8492C /* Info.plist */,
+				884911931E2FD23300F8492C /* AppDelegate.swift */,
+				884911971E2FD23300F8492C /* Main.storyboard */,
 				88D1D7AF1E33D1B6005DA774 /* UI */,
 				884911BA1E2FD55C00F8492C /* controllers */,
 				884911A91E2FD25000F8492C /* model */,
-				884911931E2FD23300F8492C /* AppDelegate.swift */,
-				884911971E2FD23300F8492C /* Main.storyboard */,
 				884911A81E2FD24200F8492C /* support */,
 			);
 			path = dlspringkasteelapp;
@@ -107,9 +109,7 @@
 		884911A81E2FD24200F8492C /* support */ = {
 			isa = PBXGroup;
 			children = (
-				8849119D1E2FD23300F8492C /* Assets.xcassets */,
 				8849119F1E2FD23300F8492C /* LaunchScreen.storyboard */,
-				884911A21E2FD23300F8492C /* Info.plist */,
 				8849119A1E2FD23300F8492C /* dlspringkasteelapp.xcdatamodeld */,
 			);
 			name = support;
