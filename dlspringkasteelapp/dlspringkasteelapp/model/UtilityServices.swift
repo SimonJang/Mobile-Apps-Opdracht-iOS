@@ -1,8 +1,3 @@
-//
-//  UtilityServices.swift
-//  dlspringkasteelapp
-//
-
 
 /*
   Klasse voor verschillende conversies toe te passen van/naar verschillende objecten

@@ -1,5 +1,6 @@
 
-//  ReserveerViewController.swift
+// ReserveerViewController.swift
+// Toont de details van een bestaande reservatie, opgevraagd door ZoekReservatieViewController
 
 import UIKit
 
@@ -56,11 +57,7 @@ class ReserveerViewController: UIViewController, DataModelRegistreerReservatieDe
         titelLabel.text = "Reservatie \(springkasteel.capitalized)"
         winkelLabel.text = "Gereserveerd in \(ReservationManager.geselecteerdeWinkel!.storeName)"
         
-        if let datum = ReservationManager.geselecteerdeDatum {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy"
-            dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-            let stringDate = dateFormatter.string(from: datum)
+        if let stringDate = ReservationManager.geselecteerdeDatum {
             datumLabel.text = "Gereserveerd op \(stringDate)"
         }
         
@@ -79,11 +76,10 @@ class ReserveerViewController: UIViewController, DataModelRegistreerReservatieDe
                     }
                     else {
                         ReservationManager.emailKlant = input
-                        let stringDate = UtilityServices.utilServices.convertDatumNaarString(datum: ReservationManager.geselecteerdeDatum!)
-                        
+    
                         let nieuweReservatie = Reservatie(klant: input,
                                                     gewenstSpringkasteel: stelSpringKasteelIn,
-                                                    datum: stringDate,
+                                                    datum: ReservationManager.geselecteerdeDatum!,
                                                     afhaalwinkel: String(ReservationManager.geselecteerdeWinkelMetAangepasteSpringkastelen!.storeId),
                                                     termijn: 1)
                         dataModelReserveren.registreer(reservatie: nieuweReservatie)

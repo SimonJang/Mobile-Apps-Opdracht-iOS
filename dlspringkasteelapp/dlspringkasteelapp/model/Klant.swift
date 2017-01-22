@@ -1,10 +1,6 @@
-//
-//  Klant.swift
-//  springkasteelapp
 
 // Informatie van de klant
-// Dit is enkel voor de reservatie. Een gebruiker moet geen account maken om een springkasteel te reserveren
-
+/*
 import Foundation
 struct Klant {
     var firstName: String
@@ -17,3 +13,4 @@ struct Klant {
         self.email = klantEmail
     }
 }
+*/

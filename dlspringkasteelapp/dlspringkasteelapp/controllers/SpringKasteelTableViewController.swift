@@ -1,4 +1,6 @@
 //  SpringKasteelTableViewController.swift
+// Toont de verschillende beschikbare springkastelen in winkel x op gekozen dag y
+// Maakt gebruik van een custom UITableViewCell
 
 import UIKit
 

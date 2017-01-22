@@ -1,8 +1,8 @@
-//
-//  HuurDetailSplitViewController.swift
-//  dlspringkasteelapp
 
+// Detail van de SplitView
+// de informatie (in String) is hardcoded in deze controller
 // Bevat de (beperkte) logica voor het tonen van de informatie
+// De extension onderaan is overgenomen van een suggestie in StackOverflow
 
 import UIKit
 
@@ -10,10 +10,6 @@ class HuurDetailSplitViewController: UIViewController {
     
     private var praktisch:Bool = false
     private var voorwaarden: Bool = true // Default waarde wanneer de app wordt opgestart
-    
-    /*
-     Gebruik gemaakt van computed vars
-     */
     
     var praktischValue:Bool {
         get {
@@ -77,11 +73,10 @@ class HuurDetailSplitViewController: UIViewController {
     }
 }
 
-// Code overgenomen uit http://stackoverflow.com/questions/28496093/making-text-bold-using-attributed-string-in-swift
+// Source: http://stackoverflow.com/questions/28496093/making-text-bold-using-attributed-string-in-swift
+// Code overgenomen enkel letertype aangepast
 // Ik wil verschillende subsecties maken in de UITextView maar niet hardcoded in het storyboard
-// Bovenstaande link voorziet deze methode
-// Deze code zou best naar model code gaan
-// TODO aanpassen deze code
+// Werking lijkt vergelijkbaar met StringBuilder in Java
 
 extension NSMutableAttributedString {
     func bold(_ text:String) -> NSMutableAttributedString {

@@ -1,10 +1,7 @@
-//
-//  WinkelSelectorViewController.swift
-//  dlspringkasteelapp
-//
-//  Created by Simon Jang on 19/01/17.
-//  Copyright © 2017 Simon Jang. All rights reserved.
-//
+// Wanneer er geen/slechte internet verbinden is en de spinner leeg is, is het niet mogelijk om te seguen naar volgende scherm
+// Reden? Anders een exception op Optional omdat er geen winkel is geselecteerd (geselecteerdeWinkel = nil)
+// en force unwrapping doet de app crashen
+// Het selecteren van een winkel is redelijk cruciaal
 
 import UIKit
 
@@ -45,16 +42,6 @@ class WinkelSelectorViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dataModelWinkel.requestWinkels()
-        /*
-        DispatchQueue.global(qos: .userInteractive).async {
-            ReservationManager.fetchWinkels()
-           DispatchQueue.main.async {
-                self.winkels = ReservationManager.haalWinkelsOp()
-                self.winkelPicker.reloadAllComponents()
-                
-            }
- 
-        }*/
     }
     
 

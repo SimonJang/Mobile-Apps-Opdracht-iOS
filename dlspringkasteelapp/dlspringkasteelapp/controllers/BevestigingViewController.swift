@@ -1,6 +1,6 @@
-//
-//  BevestigingViewController.swift
-//  dlspringkasteelapp
+// Toont bevestiging van de reservatie
+// Beperkte logica (enkel back button uitschakelen van de UINavigationBar en de volledige stack poppen van de Navigation Controller
+// om zo terug te keren naar de root
 
 
 import UIKit

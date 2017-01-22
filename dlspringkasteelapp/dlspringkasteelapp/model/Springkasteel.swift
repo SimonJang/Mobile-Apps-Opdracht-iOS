@@ -1,7 +1,4 @@
-//
-//  Springkasteel.swift
-//  springkasteelapp
-//
+
 // Enums voor de verschillende types springkastelen
 
 import Foundation

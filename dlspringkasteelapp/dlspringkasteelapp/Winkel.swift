@@ -1,11 +1,5 @@
-//
-//  Store.swift
-//  springkasteelapp
-//
-// Attributen van de winkel
-// Wordt opgevraagd om een lijst te bezorgen met alle winkels
 
-// Misschien als extra nog adres voorzien en telefoonnummer?
+// Attributen van de winkel
 
 import Foundation
 class Winkel {

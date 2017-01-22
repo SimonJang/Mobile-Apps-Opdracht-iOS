@@ -3,7 +3,7 @@
 //  springkasteelapp
 
 // Dummy data voor het ophalen voor de winkels,springkastelen en mogelijk ook reservaties
-
+/*
 
 import Foundation
 class DummyData {
@@ -71,3 +71,5 @@ class DummyData {
     }
     
 }
+ 
+ */

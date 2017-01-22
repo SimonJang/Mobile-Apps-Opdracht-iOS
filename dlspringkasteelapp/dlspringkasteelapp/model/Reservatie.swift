@@ -1,7 +1,4 @@
-//
-//  Reservation.swift
-//  springkasteelapp
-//
+
 // Alle attributen van een reservatie
 
 import Foundation

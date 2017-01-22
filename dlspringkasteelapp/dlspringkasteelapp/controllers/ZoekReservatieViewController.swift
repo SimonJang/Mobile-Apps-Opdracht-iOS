@@ -1,4 +1,5 @@
 // Controller voor opvragen van reservaties
+// Bij geen connectie/geen resultaat krijgt de gebruiker een foutmelding
 
 import UIKit
 

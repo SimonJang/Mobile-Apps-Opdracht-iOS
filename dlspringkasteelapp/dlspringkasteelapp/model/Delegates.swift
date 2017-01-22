@@ -1,15 +1,14 @@
-//
-//  RestService.swift
-//  springkasteelapp
 
-// Code gebaseerd op Source:
+
+// Code gebaseerd op Sources:
 //      https://devdactic.com/parse-json-with-swift/
 //      https://github.com/Alamofire/Alamofire voorbeelden
 //      https://github.com/SwiftyJSON/SwiftyJSON voorbeelden
 //      https://grokswift.com/rest-with-alamofire-swiftyjson/ voorbeelden
 //      https://medium.com/ios-os-x-development/ios-three-ways-to-pass-data-from-model-to-controller-b47cc72a4336#.ldllm277d voor delegation
 //
-//  Deze klasse haalt de data op van een REST service
+//  Deze klasse haalt de data op van een REST service (heroku, nodejs met mongodb, zelfgeschreven)
+//  Zie https://github.com/SimonJang/iOS-back-end
 
 
 
@@ -100,7 +99,7 @@ class DataModelReservatieOpvragenKlant {
     }
 }
 
-// Controleren van beschikbaarheid van springkasteel
+// Opvragen van reservaties van de verschillende springkastelen in winkel x op datum y
 
 protocol DataModelBeschikbareSpringkastelenDelegate: class {
     func beschikbaarheidControlerenVoltooid()
@@ -128,7 +127,7 @@ class DataModelBeschikbareSpringkastelen {
     }
 }
 
-// POSTen van reservatie naar backend
+// Registeren van een reservatie in de backend
 
 protocol DataModelRegistreerReservatieDelegate: class {
     func reservatieVoltooid()

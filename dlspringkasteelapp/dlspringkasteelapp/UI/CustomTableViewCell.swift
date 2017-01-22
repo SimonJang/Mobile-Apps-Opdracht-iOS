@@ -1,10 +1,4 @@
-//
-//  customTableViewCell.swift
-//  dlspringkasteelapp
-//
-//  Created by Simon Jang on 21/01/17.
-//  Copyright © 2017 Simon Jang. All rights reserved.
-//
+// een custom UITableViewCell voor de UITable waar de springkastelen in staan
 
 import UIKit
 

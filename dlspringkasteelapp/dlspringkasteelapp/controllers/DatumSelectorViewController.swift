@@ -1,6 +1,5 @@
-//
-//  DatumSelectorViewController.swift
-//  dlspringkasteelapp
+// Selecteren van aan datum
+// Op basis van de die datum wordt dan in het volgende scherm uitgemaakt welke springkastelen er nog beschikbaar zijn
 
 import UIKit
 
@@ -23,7 +22,6 @@ class DatumSelectorViewController: UIViewController, DataModelBeschikbareSpringk
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     private func configureDatePicker() {
@@ -45,10 +43,7 @@ class DatumSelectorViewController: UIViewController, DataModelBeschikbareSpringk
         switch(identifier) {
             case "toonSpringkastelen":
                 let datum = datePicker.date;
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd-MM-yyyy"
-                dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-                let stringDate = dateFormatter.string(from: datum)
+                let stringDate = UtilityServices.utilServices.convertDatumNaarString(datum: datum)
                 let winkelID = String(describing: ReservationManager.geselecteerdeWinkel!.storeId)
                 dataModelUpdatedNotifier.beschikbaarheidVoor(datum: stringDate, inwinkel: winkelID)
                 return false;
@@ -63,7 +58,9 @@ class DatumSelectorViewController: UIViewController, DataModelBeschikbareSpringk
         if let identifier = segue.identifier {
             switch(identifier) {
             case "toonSpringkastelen":
-                ReservationManager.geselecteerdeDatum = datePicker.date
+                let datum = datePicker.date;
+                let stringDate = UtilityServices.utilServices.convertDatumNaarString(datum: datum)
+                ReservationManager.geselecteerdeDatum = stringDate
             default:
                 break
             }
