@@ -14,7 +14,7 @@ class SpringKasteelTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 300
         
     }
     
@@ -36,7 +36,7 @@ class SpringKasteelTableViewController: UITableViewController {
         switch(indexPath.row) {
         case 0:
             if geselecteerdeWinkel!.JUNGLE > 0 {
-                cell.backgroundColor = UIColor(red:0.56 ,green:0.72 ,blue:0.97 ,alpha:1.0)
+                cell.springkasteelImage.image = UIImage(named: "Jungle")
                 cell.naamLabel.text = "Naam: Jungle"
                 cell.BeschikbaarLabel.text = "Aantal beschikbaar: \(String(describing: geselecteerdeWinkel!.JUNGLE))"
                 cell.DimensieLabel.text = "\(cell.setDimension(x: 5.90, y: 5.60, z: 4.25))"
@@ -49,6 +49,7 @@ class SpringKasteelTableViewController: UITableViewController {
             
         case 1:
             if geselecteerdeWinkel!.PIRAAT > 0 {
+                cell.springkasteelImage.image = UIImage(named: "Piraat")
                 cell.naamLabel.text = "Naam: Piraat"
                 cell.BeschikbaarLabel.text = "Aantal beschikbaar: \(String(describing: geselecteerdeWinkel!.PIRAAT))"
                 cell.DimensieLabel.text = "\(cell.setDimension(x: 5.00, y: 4.50, z: 3.80))"
@@ -60,7 +61,7 @@ class SpringKasteelTableViewController: UITableViewController {
             }
         case 2:
             if geselecteerdeWinkel!.CIRCUS > 0 {
-                cell.backgroundColor = UIColor(red:0.56 ,green:0.72 ,blue:0.97 ,alpha:1.0)
+                cell.springkasteelImage.image = UIImage(named: "Circus")
                 cell.naamLabel.text = "Naam: Circus"
                 cell.BeschikbaarLabel.text = "Aantal beschikbaar: \(String(describing: geselecteerdeWinkel!.CIRCUS))"
                 cell.DimensieLabel.text = "\(cell.setDimension(x: 6.30, y: 3.00, z: 3.60))"
@@ -72,6 +73,7 @@ class SpringKasteelTableViewController: UITableViewController {
             }
         case 3:
             if geselecteerdeWinkel!.JUMP > 0 {
+                cell.springkasteelImage.image = UIImage(named: "Jump")
                 cell.naamLabel.text = "Naam: Jump 'o Line"
                 cell.BeschikbaarLabel.text = "Aantal beschikbaar: \(String(describing: geselecteerdeWinkel!.JUMP))"
                 cell.DimensieLabel.text = "\(cell.setDimension(x: 4.10, y: 5.80, z: 3.70))"
@@ -83,6 +85,7 @@ class SpringKasteelTableViewController: UITableViewController {
             }
             
         default:
+            cell.isHidden = true
             return cell
         }
         
